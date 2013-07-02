@@ -1,0 +1,101 @@
+/*
+ * table style
+ */
+.table {
+  width: 100%;
+  margin-bottom: @baseLineHeight; // 对齐是排版最重要的因素, 别让什么都居中
+  caption, th {
+    text-align: left;
+    font-weight: 600;
+  }
+  caption {
+    padding: @tablePadding;
+    font-size: @tableCaptionFontSize;
+  }
+// Cells
+  th, td {
+    padding: @tablePadding;
+    line-height: @baseLineHeight;
+    vertical-align: middle;
+    border-top: 1px solid @tableBorder;
+  }
+
+  tr.first td, tr.first th, thead th {
+    border-top: 0;
+  }
+}
+
+// CONDENSED TABLE W/ HALF PADDING
+.table-condensed {
+  th, td {
+    padding: @tablePadding/2;
+  }
+}
+
+// BORDERED
+.table-bordered {
+  border: 1px solid @tableBorder;
+  border-left: 0;
+
+  th, td {
+    border-left: 1px solid @tableBorder;
+  }
+}
+.table-noborder {
+  th, td {
+    border:none;
+  }
+}
+
+// TABLE BACKGROUNDS
+// Exact selectors below required to override .table-striped
+.table tbody tr {
+  &.success td {
+    background-color: @bgSuccessColor;
+  }
+  &.error td {
+    background-color: @bgErrorColor;
+  }
+  &.warn td {
+    background-color: @bgWarnColor;
+  }
+  &.info td {
+    background-color: @bgInfoColor;
+  }
+}
+
+// ZEBRA-STRIPING
+.table-striped {
+  tbody {
+    tr.odd td, tr.odd th {
+      background-color: @tableBackgroundStriped;
+    }
+  }
+}
+
+// HOVER EFFECT
+.table-hover {
+  tbody {
+    tr:hover td, tr:hover th {
+      background-color: @tableBackgroundHover;
+    }
+  }
+}
+
+// TABLE BACKGROUNDS
+// -----------------
+// Hover states for .table-hover
+.table-hover tbody tr {
+  &.success:hover td {
+    background-color: darken(@bgSuccessColor, 5%);
+  }
+  &.error:hover td {
+    background-color: darken(@bgErrorColor, 5%);
+  }
+  &.warn:hover td {
+    background-color: darken(@bgWarnColor, 5%);
+  }
+  &.info:hover td {
+    background-color: darken(@bgInfoColor, 5%);
+  }
+}

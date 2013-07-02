@@ -1,0 +1,57 @@
+/*
+ * list style
+ */
+// 去掉列表前的标识, li 会继承, 都自定义, 适应多个系统应用 (no styled)
+ol, ul {
+  list-style: none;
+}
+
+ul ul, ul ol, ol ol, ol ul {
+  margin-bottom: 0;
+}
+
+li {
+  line-height: @baseLineHeight;
+}
+
+// styled
+ul.styled {
+  list-style: disc;
+}
+
+ol.styled {
+  list-style: decimal;
+}
+
+ul.styled, ol.styled {
+  padding: 0;
+  margin: 0 0 @baseLineHeight / 2 25px;
+
+  ul {
+    padding: 0;
+    margin: 0 0 0 25px;
+    list-style: circle;
+  }
+  ol {
+    padding: 0;
+    margin: 0 0 0 25px;
+    list-style: decimal;
+  }
+}
+
+// Description Lists
+dl {
+  margin-bottom: @baseLineHeight;
+}
+
+dt, dd {
+  line-height: @baseLineHeight;
+}
+
+dt {
+  font-weight: bold;
+}
+
+dd {
+  margin-left: @baseLineHeight;
+}

@@ -1,0 +1,92 @@
+// BASE
+// ---------------------------------------------------
+@baseFontFamily: "\5FAE\8F6F\96C5\9ED1",tahoma,arial,"Hiragino Sans GB","\5b8b\4f53";
+@baseFontSize: 12px;
+@baseLineHeight: 1.5em;
+
+@bodyBackground: @white;
+@bodyTextColor: @grayDark;
+
+@headFontFamily: inherit; // empty to use BS default, @baseFontFamily
+@headFontWeight: 600; // instead of browser default, bold
+@headTextColor: inherit; // empty to use BS default, @bodyTextColor
+
+// base color
+@textColor: #333;
+@textPrimaryColor: #333;
+@textInverseColor: #333;
+@textSuccessColor: #333;
+@textInfoColor: #333;
+@textWarnColor: #333;
+@textErrorColor: #333;
+
+@bgColor: #333;
+@bgPrimaryColor: #333;
+@bgInverseColor: #333;
+@bgSuccessColor: #333;
+@bgInfoColor: #333;
+@bgWarnColor: #333;
+@bgErrorColor: #333;
+
+@borderColor: #333;
+@borderPrimaryColor: #333;
+@borderInverseColor: #333;
+@borderSuccessColor: #333;
+@borderInfoColor: #333;
+@borderWarnColor: #333;
+@borderErrorColor: #333;
+
+// border color
+@borderColor: #ddd;
+@lightBorderColor: #eee;
+
+// grays color
+@black: #000;
+@grayDarker: #222;
+@grayDark: #333;
+@gray: #666;
+@grayLight: #999;
+@grayLighter: #eee;
+@white: #fff;
+
+// UNIT
+// ---------------------------------------------------
+// link
+@linkColor: #00c;
+@linkPrimaryColor: #c00;
+@linkInverseColor: @bodyTextColor;
+
+// table
+@tableBackgroundStriped: #f9f9f9; // for striped
+@tableBackgroundHover: #f5f5f5; // for hover
+@tableBorder: #ddd; // table and cell border
+@tablePadding: 8px; // table cell padding
+@tableCaptionFontSize: 1.1em; // table Caption Font Size
+
+// button
+
+
+// form
+
+// LAYOUT
+// ---------------------------------------------------
+@largeGutterWidth: 30px;
+@gutterWidth: 20px;
+@smallGutterWidth: 10px;
+
+// GRID
+// Default 1020(1000) grid
+@gridColumnWidth: 65px;
+@gridGutterWidth: @gutterWidth;
+// 1200(1180) grid
+@gridColumnWidth1200: 80px;
+@gridGutterWidth1200: @gutterWidth;
+
+@gridColumns: 12;
+@gridRowWidth: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
+@gridRowFullWidth: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * @gridColumns);
+
+// Fluid grid
+@fluidGridGutterWidth:  2%;
+@fluidGridColumnWidth:  percentage(76/1200);
+@fluidGridColumnWidthIE67:  percentage(75/1200);

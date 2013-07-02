@@ -1,0 +1,19 @@
+/*
+ *  form style
+ */
+// Make all forms have space below them
+form {
+  margin: 0 0 @baseLineHeight;
+}
+
+legend {
+  display: block;
+  margin-bottom: @baseLineHeight;
+  font-size: @baseFontSize * 1.5;
+  line-height: @baseLineHeight * 2;
+  border-bottom: 1px solid #e5e5e5; // Small
+  small {
+    font-size: @baseLineHeight * .75;
+    color: @grayLight;
+  }
+}

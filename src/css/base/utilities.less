@@ -1,0 +1,130 @@
+/*
+ * 一些常用的css功能
+ */
+// 清理浮动
+.clearfix {
+  zoom: 1; /* for IE6 IE7 */
+  &:after {
+    visibility: hidden;
+    display: block;
+    font-size: 0;
+    content: " ";
+    clear: both;
+    height: 0;
+  }
+}
+
+// Quick floats
+.pull-left, .pull-right {
+  display:inline;
+}
+.pull-right {
+  float: right;
+}
+.pull-left {
+  float: left;
+}
+
+// Toggling content
+.hide {
+  display: none;
+}
+.invisible {
+  visibility: hidden;
+}
+
+// Text Color Emphasis
+.text-inverse{
+  color: @textInverseColor;
+}
+.text-warn {
+  color: @textWarnColor;
+}
+.text-error {
+  color: @textErrorColor;
+}
+.text-info {
+  color: @textInfoColor;
+}
+.text-success {
+  color: @textSuccessColor;
+}
+
+// Quick align
+.text-right {
+  text-align: right;
+}
+.text-left {
+  text-align: left;
+}
+.text-center {
+  text-align: center;
+}
+.text-overflow {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Element Emphasis
+.strong {
+  font-weight: 600;
+}
+.normal {
+  font-size: 1em;
+  font-style: normal;
+  font-weight: 500;
+}
+.em {
+  font-style: italic;
+}
+
+// Text size
+.larger {
+  font-size: 1.3em;
+}
+.large {
+  font-size: 1.15em;
+}
+.small {
+  font-size: .85em;
+}
+.smaller {
+  font-size: .7em;
+}
+
+// gutter
+.gutter {
+  clear: both;
+  display: block;
+  content:" ";font-size: 0px;line-height: 0;
+  height: @gutterWidth;
+}
+.gutter-large {
+  clear: both;
+  display: block;
+  content:" ";font-size: 0px;line-height: 0;
+  height: @largeGutterWidth;
+}
+.gutter-small {
+  clear: both;
+  display: block;
+  content:" ";font-size: 0px;line-height: 0;
+  height: @smallGutterWidth;
+}
+// vertical
+.vgutter {
+  .inline-block();
+  content:" ";font-size: 0px;line-height: 0;
+  width: @gutterWidth;
+}
+.vgutter-large {
+  .inline-block();
+  content:" ";font-size: 0px;line-height: 0;
+  width: @largeGutterWidth;
+}
+.vgutter-small {
+  .inline-block();
+  content:" ";font-size: 0px;line-height: 0;
+  width: @smallGutterWidth;
+}
