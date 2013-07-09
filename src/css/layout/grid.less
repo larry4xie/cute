@@ -1,3 +1,16 @@
+// 12 grid
+#grid > .core(@gridColumns);
+
+// 固定布局
+// Default 1020(1000) grid
+#grid > .solid(@gridColumnWidth, @gridGutterWidth, @gridColumns);
+// 1200(1180) grid
+#grid > .solid(@gridColumnWidth1200, @gridGutterWidth1200, @gridColumns, "-1200");
+
+// 流式布局
+#grid > .fluid(@fluidGridColumnWidth, @fluidGridGutterWidth, @gridColumns);
+#grid > .fluid(@fluidGridColumnWidthStingy, @fluidGridGutterWidthStingy, @gridColumns, "-stingy");
+
 // mixins
 #grid {
   // common
@@ -49,27 +62,22 @@
       margin-left: auto;
       .clearfix();
       width: (@gridColumnWidth * @gridColumns) + (@gridGutterWidth * (@gridColumns - 1));
-    }
-    // row
-    (~".row@{suffix}") {
-      .clearfix();
-      margin-left: @gridGutterWidth * -0.5;
-      margin-right: @gridGutterWidth * -0.5;
 
-      // .spanX and .offsetX
-      .spanX (@gridColumns);
-      .offsetX (@gridColumns - 1);
+      // row
+      .row {
+        .clearfix();
+        margin-left: @gridGutterWidth * -0.5;
+        margin-right: @gridGutterWidth * -0.5;
+
+        // .spanX and .offsetX
+        .spanX (@gridColumns);
+        .offsetX (@gridColumns - 1);
+      }
     }
   }
 
   // 流式布局
-  .fluid (@fluidGridColumnWidth, @fluidGridGutterWidth, @gridColumns) {
-    // container-fluid
-    .container-fluid {
-      margin-right: @gridGutterWidth / 2;
-      margin-left: @gridGutterWidth / 2;
-      .clearfix();
-    }
+  .fluid (@fluidGridColumnWidth, @fluidGridGutterWidth, @gridColumns, @suffix: "") {
     // grid fluid span
     .spanX (@index) when (@index > 0) {
       (~".span@{index}") { .span(@index); }
@@ -93,27 +101,22 @@
       margin-left: (@fluidGridColumnWidth * @columns) + (@fluidGridGutterWidth * (@columns + 0.5));
     }
 
-    // row-fluid
-    .row-fluid {
-      *overflow: hidden;
-      width: 100%;
+    // container-fluid
+    (~".container-fluid@{suffix}"){
+      //      margin-right: @gridGutterWidth / 2;
+      //      margin-left: @gridGutterWidth / 2;
       .clearfix();
 
-      // generate .spanX and .offsetX
-      .spanX (@gridColumns);
-      .offsetX (@gridColumns - 1);
+      // row-fluid
+      .row {
+        *overflow: hidden;
+        width: 100%;
+        .clearfix();
+
+        // generate .spanX and .offsetX
+        .spanX (@gridColumns);
+        .offsetX (@gridColumns - 1);
+      }
     }
   }
 }
-
-// 12 grid
-#grid > .core(@gridColumns);
-
-// 固定布局
-// Default 1020(1000) grid
-#grid > .solid(@gridColumnWidth, @gridGutterWidth, @gridColumns);
-// 1200(1180) grid
-#grid > .solid(@gridColumnWidth1200, @gridGutterWidth1200, @gridColumns, "-1200");
-
-// 流式布局
-#grid > .fluid(@fluidGridColumnWidth, @fluidGridGutterWidth, @gridColumns);

@@ -17,7 +17,7 @@
     padding: @tablePadding;
     line-height: @baseLineHeight;
     vertical-align: middle;
-    border-top: 1px solid @tableBorder;
+    border-top: 1px solid @borderColor;
   }
 
   tr.first td, tr.first th, thead th {
@@ -34,11 +34,11 @@
 
 // BORDERED
 .table-bordered {
-  border: 1px solid @tableBorder;
+  border: 1px solid @borderColor;
   border-left: 0;
 
   th, td {
-    border-left: 1px solid @tableBorder;
+    border-left: 1px solid @borderColor;
   }
 }
 .table-noborder {

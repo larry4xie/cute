@@ -1,19 +1,189 @@
 /*
  *  form style
  */
-// Make all forms have space below them
-form {
-  margin: 0 0 @baseLineHeight;
+input, textarea {
+  line-height: @baseFontSize * @baseLineHeight; // fix ie not align bug
 }
 
-legend {
-  display: block;
-  margin-bottom: @baseLineHeight;
-  font-size: @baseFontSize * 1.5;
-  line-height: @baseLineHeight * 2;
-  border-bottom: 1px solid #e5e5e5; // Small
-  small {
-    font-size: @baseLineHeight * .75;
-    color: @grayLight;
+// default form style is inline
+.form {
+  fieldset {
+    border: 0;
+  }
+
+  legend {
+    padding: 0.3em 0;
+    margin-bottom: 1em;
+    width: 100%;
+    font-size: 1.25em;
+    line-height: 2em;
+    border-bottom: 1px solid #ddd; // TODO
+
+    *margin-left: -7px;
+    *zoom: 1;
+  }
+}
+
+.input {
+  width: 170px;
+}
+
+.input-file-container {
+  .inline-block();
+  position:relative;
+  cursor:pointer;
+  overflow:hidden;
+  vertical-align:middle;
+
+  .input-file {
+    position:absolute;
+    right:0;
+    top:0;
+    _font-size:100px; /* overwrite*/
+    _font-size:12px;
+    _zoom:10; /* overwrite */
+    height:100%;
+    _height:auto;
+    opacity:0;
+    filter:alpha(opacity=0);
+    cursor:pointer;
+  }
+}
+
+// input size
+.input-smaller {
+  width: 60px;
+}
+.input-small {
+  width: 100px;
+}
+.input-large {
+  width: 280px;
+}
+.input-larger {
+  width: 460px;
+}
+
+.input, .select, .textarea {
+  padding: 4px 6px;
+  border: 1px solid @formBorderColor;
+  &:focus {
+    outline: 0;
+  }
+}
+
+.input, .textarea {
+  &:focus {
+    border-color: @formFocusBorderColor;
+  }
+}
+
+.input-success {
+  border: 1px solid @borderSuccessColor;
+  &:focus {
+    border-color: darken(@borderSuccessColor, 10%);
+  }
+}
+.input-info {
+  border: 1px solid @borderInfoColor;
+  &:focus {
+    border-color: darken(@borderInfoColor, 10%);
+  }
+}
+.input-warn {
+  border: 1px solid @borderWarnColor;
+  &:focus {
+    border-color: darken(@borderWarnColor, 10%);
+  }
+}
+.input-error {
+  border: 1px solid @borderErrorColor;
+  &:focus {
+    border-color: darken(@borderErrorColor, 10%);
+  }
+}
+
+.checkbox, .radio {
+  .inline-block();
+  padding-top: 5px;
+}
+
+.input-disabled, .textarea-disabled{
+  background-color: #f2f2f2;
+}
+
+.form-required {
+  color: #f00;
+  font-family: SimSun;
+  font-size: 14px;
+  line-height: @baseFontSize * @baseLineHeight;
+}
+
+// .form-explain see .text-inverse
+// .form-text-xxx see .text-xxx
+
+// item
+.form-item {
+  margin-bottom: @baseFormSpace * 2;
+  .clearfix();
+}
+// style group
+.form-item-group{
+  margin-bottom: @baseFormSpace * 2;
+  .form-item {
+    margin-bottom: 0;
+    margin-top: -1px;
+    *zoom:1;
+
+    .input {
+      *float: left;
+      position: relative;
+      &:focus {
+        z-index: 2;
+      }
+    }
+  }
+}
+
+// y space, default one line-height
+.form-space-small {
+  .form-item {
+    margin-bottom: @baseFormSpace;
+  }
+
+  .form-item-group {
+    margin-bottom: @baseFormSpace;
+  }
+}
+.form-space-large {
+  .form-item {
+    margin-bottom: @baseFormSpace * 3;
+  }
+
+  .form-item-group {
+    margin-bottom: @baseFormSpace * 3;
+  }
+}
+
+// style stacked
+.form-stacked {
+  .label {
+    display: block;
+    margin-bottom: .2em;
+  }
+}
+
+// style aligned
+.form-aligned {
+  .form-item {
+    padding-left: 160px;
+  }
+
+  .label {
+    float: left;
+    padding-top: 5px;
+    margin-left: -160px;
+    width: 150px;
+    text-align: right;
   }
 }

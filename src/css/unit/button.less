@@ -1,222 +1,31 @@
 /*
  * button style
  */
-.buttonCommon() {
-  .inline-block();
-  cursor: pointer;
-  text-align: center;
-  vertical-align: middle;
-  font-size: @baseFontSize;
-  line-height: @baseLineHeight;
-  *line-height: @baseLineHeight;
-  padding: .4em 1.2em;
-
-  .box-shadow(inset 0 1px 0 rgba(255,255,255,.2), 0 1px 2px rgba(0,0,0,.05));
-  .ie7-restore-left-whitespace(); // Give IE7 some love
-
-  &:hover {
-    text-decoration: none;
-    .reset-gradient-filter();
-    background-image: none;
-  }
-
-  &:focus {
-    .tab-focus();
-  }
-
-// Active state
-  &:active {
-    outline: 0;
-    .box-shadow(inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05));
-    .reset-gradient-filter();
-    background-image: none;
-  }
-
-  // selected state
-  &.btn-selected {
-    cursor: default;
-    outline: 0;
-    .box-shadow(inset 0 2px 4px rgba(0,0,0,.15), 0 1px 2px rgba(0,0,0,.05));
-    .reset-gradient-filter();
-    background-image: none;
-  }
-
-  // Disabled state
-  &.btn-disabled {
-    cursor: default;
-    .reset-gradient-filter();
-    background-image: none;
-    .opacity(65);
-    outline: 0;
-    .box-shadow(none);
-  }
-}
-.button(@startColor, @endColor, @borderColor:@endColor, @textColor: #fff, @textShadow: 0 -1px 0 rgba(0,0,0,.25)) {
-  color: @textColor;
-  text-shadow: @textShadow;
-  #gradient > .vertical(@startColor, @endColor);
-  border: 1px solid @borderColor;
-  border-bottom-color: darken(@borderColor, 10%);
-
-  //ie6 ie7 black border bug
-  *border: 0; // Remove the border to prevent IE7's black border on input:focus
-  *background-color:darken(mix(@startColor, @endColor, 50%), 3%); /* Darken IE7 buttons by default so they stand out more given they won't have borders */
-  *filter: e(%("progid:DXImageTransform.Microsoft.gradient(enabled = false)"));
-
-  &:hover {
-    color: @textColor;
-    background-color: @endColor; // ie6 ie7
-    *background-color: darken(@endColor, 5%); // ie6 ie7
-  }
-
-  // Active state
-  &:active {
-    background-color: darken(@endColor, 8%);
-  }
-  // selected state
-  &.btn-selected {
-    background-color: darken(@endColor, 8%);
-    *background-color: darken(@endColor, 12%);
-  }
-
-  // Disabled state
-  &.btn-disabled, &.btn-disabled:hover, &.btn-disabled:active {
-    background-color: mix(@startColor, @endColor, 50%);
-  }
-
-}
-// Button
-// ------------------------------------
 .btn {
-  .buttonCommon();
-  .button(@btnBackground, @btnBackgroundHighlight, @btnBorder, @grayDark, 0 1px 1px rgba(255,255,255,.75));
-  .border-radius(@baseBorderRadius);
-  .ie9-reset-radius();
+  &:hover {}
+  &:focus {}
+  &:active {}
 }
 
-// ie6 ie7 hack
-button.btn, input.btn {
-  *line-height: @baseLineHeight - .4em;
-}
+// size
+.btn-larger {}
+.btn-large {}
+.btn-small {}
+.btn-smaller {}
 
-a.btn {
-  margin: 0px;
-  text-decoration: none;
-  &:hover{
-    text-decoration: none;
-  }
-}
-
-// Button Sizes
-// --------------------------------------------------
-// Larger
-.btn-larger {
-  font-size: @baseFontSize + 8px;
-  .border-radius(@borderRadiusLarge);
-  .ie9-reset-radius();
-}
-
-// Large
-.btn-large {
-  font-size: @baseFontSize + 4px;
-}
-
-// Small
-.btn-small {
-  font-size: @baseFontSize - 2px;
-}
-
-// Smaller
-.btn-smaller {
-  font-size: @baseFontSize - 4px;
-  .border-radius(@borderRadiusSmall);
-  .ie9-reset-radius();
-}
-
-.btn-primary {
-  .button(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBackgroundHighlight, @btnPrimaryTextColor);
-}
-
-// Warning appears are orange
-.btn-warn {
-  .button(@btnWarnBackground, @btnWarnBackgroundHighlight, @btnWarnBackgroundHighlight, @btnWarnTextColor);
-}
-
-// Danger and error appear as red
-.btn-important, .btn-error {
-  .button(@btnErrorBackground, @btnErrorBackgroundHighlight, @btnErrorBackgroundHighlight, @btnErrorTextColor);
-}
-
-// Success appears as green
-.btn-success {
-  .button(@btnSuccessBackground, @btnSuccessBackgroundHighlight, @btnSuccessBackgroundHighlight, @btnSuccessTextColor);
-}
-
-// Info appears as a neutral blue
-.btn-info {
-  .button(@btnInfoBackground, @btnInfoBackgroundHighlight, @btnInfoBackgroundHighlight, @btnInfoTextColor);
-}
-
-// Inverse appears as dark gray
-.btn-inverse {
-  .button(@btnInverseBackground, @btnInverseBackgroundHighlight, @btnInverseBackgroundHighlight, @btnInverseTextColor);
-}
-
-// Block button
-// -------------------------
 .btn-block {
   display: block;
   padding-left: 0;
   padding-right: 0;
 }
 
-// ie6 btn-disabled
-.btn-disabled,.btn-disabled:hover,.btn-disabled:active{
-  _filter: ~"alpha(opacity=65)";
-  _background-color: mix(@btnBackground, @btnBackgroundHighlight, 50%);
-}
 // theme
-.btn-primary-disabled,.btn-primary-disabled:hover,.btn-primary-disabled:active{
-  _background-color: mix(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, 50%);
-}
-.btn-warn-disabled,.btn-warn-disabled:hover,.btn-warn-disabled:active{
-  _background-color: mix(@btnWarnBackground, @btnWarnBackgroundHighlight, 50%);
-}
-.btn-important-disabled,.btn-important-disabled:hover,.btn-important-disabled:active,
-.btn-error-disabled,.btn-error-disabled:hover,.btn-error-disabled:active {
-  _background-color: mix(@btnErrorBackground, @btnErrorBackgroundHighlight, 50%);
-}
-.btn-success-disabled,.btn-success-disabled:hover,.btn-success-disabled:active{
-  _background-color: mix(@btnSuccessBackground, @btnSuccessBackgroundHighlight, 50%);
-}
-.btn-info-disabled,.btn-info-disabled:hover,.btn-info-disabled:active{
-  _background-color: mix(@btnInfoBackground, @btnInfoBackgroundHighlight, 50%);
-}
-.btn-inverse-disabled,.btn-inverse-disabled:hover,.btn-inverse-disabled:active{
-  _background-color: mix(@btnInverseBackground, @btnInverseBackgroundHighlight, 50%);
-}
+.btn-primary {}
+.btn-inverse {}
+.btn-success {}
+.btn-info {}
+.btn-warn {}
+.btn-error {}
 
-// ie6 btn-selected
-.btn-selected, .btn-selected:hover{
-  _background-color: darken(@btnBackgroundHighlight, 12%);
-}
-// theme
-.btn-primary-selected, .btn-primary-selected:hover{
-  _background-color: darken(@btnPrimaryBackgroundHighlight, 12%);
-}
-.btn-warn-selected, .btn-warn-selected:hover{
-  _background-color: darken(@btnWarnBackgroundHighlight, 12%);
-}
-.btn-important-selected, .btn-important-selected:hover,
-.btn-error-selected, .btn-error-selected:hover{
-  _background-color: darken(@btnErrorBackgroundHighlight, 12%);
-}
-.btn-success-selected, .btn-success-selected:hover{
-  _background-color: darken(@btnSuccessBackgroundHighlight, 12%);
-}
-.btn-primary-selected, .btn-primary-selected:hover{
-  _background-color: darken(@btnPrimaryBackgroundHighlight, 12%);
-}
-.btn-inverse-selected, .btn-inverse-selected:hover{
-  _background-color: darken(@btnInverseBackgroundHighlight, 12%);
-}
+.btn-disabled {}
+.btn-selected {}

@@ -1,0 +1,248 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>from style</title>
+    <link type="text/css" rel="stylesheet" href="../../dist/cute.css"/>
+</head>
+<body>
+    <form class="form">
+        <fieldset>
+            <legend>inline form</legend>
+
+            <input class="input" type="email" placeholder="邮箱">
+            <input class="input" type="password" placeholder="密码">
+
+            <label for="remember">
+                <input id="remember" type="checkbox"> Remember me
+            </label>
+
+            <button type="submit" class="btn">Sign in</button>
+        </fieldset>
+    </form>
+
+    <span class="gutter-large"></span>
+
+    <form class="form">
+        <fieldset>
+            <legend>group form</legend>
+
+            <div class="form-item-group">
+                <div class="form-item">
+                    <input class="input" type="email" placeholder="邮箱">
+                </div>
+                <div class="form-item">
+                    <input class="input" type="password" placeholder="密码">
+                </div>
+                <div class="form-item">
+                    <input class="input" type="repassword" placeholder="重复密码">
+                </div>
+            </div>
+
+            <div class="form-item-group">
+                <div class="form-item">
+                    <input class="input" type="email" placeholder="邮箱">
+                </div>
+                <div class="form-item">
+                    <input class="input" type="password" placeholder="密码">
+                </div>
+            </div>
+
+            <div class="form-item">
+                <button type="submit" class="btn">Sign in</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <span class="gutter-large"></span>
+
+    <form class="form form-stacked">
+        <fieldset>
+            <legend>stacked form</legend>
+
+            <div class="form-item">
+                <label class="label" for="email">邮箱</label>
+                <input class="input" id="email" type="email" placeholder="邮箱" />
+            </div>
+            <div class="form-item">
+                <label class="label" for="password">密码</label>
+                <input class="input" id="password" type="password" placeholder="密码">
+            </div>
+
+            <div class="form-item">
+                <label class="label">编程语言</label>
+                <input type="checkbox"> java
+                <input type="checkbox"> php
+                <input type="checkbox"> .net
+            </div>
+
+            <div class="form-item">
+                <label class="label">还是编程语言</label>
+                <input type="radio" name="lang"> java
+                <input type="radio" name="lang"> php
+                <input type="radio" name="lang"> .net
+            </div>
+
+            <div class="form-item">
+                <label class="label">还是...编程语言</label>
+                <select class="select">
+                    <option>java</option>
+                    <option>php</option>
+                    <option>objective-c</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label class="label">多行编辑框</label>
+                <textarea class="textarea" rows="5" cols="50"></textarea>
+            </div>
+
+            <div class="form-item">
+                <button type="submit" class="btn">Sign in</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <span class="gutter-large"></span>
+
+    <form class="form form-aligned">
+        <fieldset>
+            <legend>aligned form</legend>
+
+            <div class="form-item">
+                <label class="label" for="email">邮箱</label>
+                <input class="input" id="email" type="email" placeholder="邮箱" />
+            </div>
+            <div class="form-item">
+                <label class="label" for="password">密码</label>
+                <input class="input" id="password" type="password" placeholder="密码">
+            </div>
+
+            <div class="form-item">
+                <label class="label">编程语言</label>
+                <input type="checkbox"> java
+                <input type="checkbox"> php
+                <input type="checkbox"> .net
+            </div>
+
+            <div class="form-item">
+                <label class="label">还是编程语言</label>
+                <input type="radio" name="lang"> java
+                <input type="radio" name="lang"> php
+                <input type="radio" name="lang"> .net
+            </div>
+
+            <div class="form-item">
+                <label class="label">还是...编程语言</label>
+                <select class="select">
+                    <option>java</option>
+                    <option>php</option>
+                    <option>objective-c</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <label class="label">多行编辑框</label>
+                <textarea class="textarea" rows="5" cols="50"></textarea>
+            </div>
+
+            <div class="form-item form-controls">
+                <button type="submit" class="btn btn-primary">Sign in</button>
+                <button type="reset" class="btn">Reset</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <span class="gutter-large"></span>
+
+    <form class="form form-space-small container-fluid-stingy">
+        <fieldset>
+            <legend>grid space form</legend>
+
+            <div class="row">
+                <div class="form-item span3">
+                    <label for="email">邮箱</label>
+                    <input class="input" id="email" type="email" placeholder="邮箱" />
+                </div>
+                <div class="form-item span3">
+                    <label for="password">密码</label>
+                    <input class="input" id="password" type="password" placeholder="密码">
+                </div>
+                <div class="form-item span3">
+                    <label for="email">邮箱</label>
+                    <input class="input" id="email" type="email" placeholder="邮箱" />
+                </div>
+                <div class="form-item span3">
+                    <label for="password">密码</label>
+                    <input class="input" id="password" type="password" placeholder="密码">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-item span3">
+                    <label for="email">邮箱</label>
+                    <input class="input" id="email" type="email" placeholder="邮箱" />
+                </div>
+                <div class="form-item span3">
+                    <label for="password">密码</label>
+                    <input class="input" id="password" type="password" placeholder="密码">
+                </div>
+                <div class="form-item span3">
+                    <label for="email">邮箱</label>
+                    <input class="input" id="email" type="email" placeholder="邮箱" />
+                </div>
+                <div class="form-item span3">
+                    <label for="password">密码</label>
+                    <input class="input" id="password" type="password" placeholder="密码">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-item span3">
+                    <label for="email">邮箱</label>
+                    <input class="input" id="email" type="email" placeholder="邮箱" />
+                </div>
+                <div class="form-item span3">
+                    <label for="password">密码</label>
+                    <input class="input" id="password" type="password" placeholder="密码">
+                </div>
+                <div class="form-item span3">
+                    <label for="email">邮箱</label>
+                    <input class="input" id="email" type="email" placeholder="邮箱" />
+                </div>
+                <div class="form-item span3">
+                    <label for="password">密码</label>
+                    <input class="input" id="password" type="password" placeholder="密码">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-item span3">
+                    <label for="email">邮箱</label>
+                    <input class="input" id="email" type="email" placeholder="邮箱" />
+                </div>
+                <div class="form-item span3">
+                    <label for="password">密码</label>
+                    <input class="input" id="password" type="password" placeholder="密码">
+                </div>
+                <div class="form-item span3">
+                    <label for="email">邮箱</label>
+                    <input class="input" id="email" type="email" placeholder="邮箱" />
+                </div>
+                <div class="form-item span3">
+                    <label for="password">密码</label>
+                    <input class="input" id="password" type="password" placeholder="密码">
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-item form-controls span12">
+                    <button type="submit" class="btn btn-primary">Sign in</button>
+                    <button type="reset" class="btn">Reset</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
+

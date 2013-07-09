@@ -11,34 +11,32 @@
 @headFontWeight: 600; // instead of browser default, bold
 @headTextColor: inherit; // empty to use BS default, @bodyTextColor
 
-// base color
-@textColor: #333;
-@textPrimaryColor: #333;
-@textInverseColor: #333;
-@textSuccessColor: #333;
-@textInfoColor: #333;
-@textWarnColor: #333;
-@textErrorColor: #333;
+// text color
+@textColor: @bodyTextColor;
+@textPrimaryColor: #006dbc;
+@textInverseColor: #666;
+@textSuccessColor: #468847;
+@textInfoColor: #3a87ad;
+@textWarnColor: #c09853;
+@textErrorColor: #b94a48;
 
-@bgColor: #333;
-@bgPrimaryColor: #333;
-@bgInverseColor: #333;
-@bgSuccessColor: #333;
-@bgInfoColor: #333;
-@bgWarnColor: #333;
-@bgErrorColor: #333;
-
-@borderColor: #333;
-@borderPrimaryColor: #333;
-@borderInverseColor: #333;
-@borderSuccessColor: #333;
-@borderInfoColor: #333;
-@borderWarnColor: #333;
-@borderErrorColor: #333;
+// background color
+@bgColor: #fff;
+@bgPrimaryColor: #e5f4ff;
+@bgInverseColor: #f3f3f3;
+@bgSuccessColor: #dff0d8;
+@bgInfoColor: #d9edf7;
+@bgWarnColor: #fcf8e3;
+@bgErrorColor: #f2dede;
 
 // border color
 @borderColor: #ddd;
-@lightBorderColor: #eee;
+@borderPrimaryColor: @textPrimaryColor;
+@borderInverseColor: #eee;
+@borderSuccessColor: @textSuccessColor;
+@borderInfoColor: @textInfoColor;
+@borderWarnColor: @textWarnColor;
+@borderErrorColor: @textErrorColor;
 
 // grays color
 @black: #000;
@@ -59,14 +57,15 @@
 // table
 @tableBackgroundStriped: #f9f9f9; // for striped
 @tableBackgroundHover: #f5f5f5; // for hover
-@tableBorder: #ddd; // table and cell border
 @tablePadding: 8px; // table cell padding
 @tableCaptionFontSize: 1.1em; // table Caption Font Size
 
 // button
 
-
 // form
+@baseFormSpace: .6em; // =small normal=2x large=3x
+@formBorderColor: #ccc;
+@formFocusBorderColor: #e59700;
 
 // LAYOUT
 // ---------------------------------------------------
@@ -75,18 +74,25 @@
 @smallGutterWidth: 10px;
 
 // GRID
+@gridColumns: 12;
+
 // Default 1020(1000) grid
 @gridColumnWidth: 65px;
 @gridGutterWidth: @gutterWidth;
-// 1200(1180) grid
-@gridColumnWidth1200: 80px;
-@gridGutterWidth1200: @gutterWidth;
-
-@gridColumns: 12;
 @gridRowWidth: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 @gridRowFullWidth: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * @gridColumns);
 
+// 1200(1180) grid
+@gridColumnWidth1200: 80px;
+@gridGutterWidth1200: @gutterWidth;
+@gridRowWidth1200: (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
+@gridRowFullWidth1200: (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * @gridColumns);
+
 // Fluid grid
 @fluidGridGutterWidth:  2%;
-@fluidGridColumnWidth:  percentage(76/1200);
-@fluidGridColumnWidthIE67:  percentage(75/1200);
+@fluidGridColumnWidth:  percentage(76/1200); // 1200 = 12 * 100
+//@fluidGridColumnWidthIE67:  percentage(75/1200);
+
+// has none gutter fluid grid
+@fluidGridGutterWidthStingy  :  0;
+@fluidGridColumnWidthStingy:  percentage(100/1200); // 1200 = 12 * 100

@@ -1,0 +1,116 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>form component style</title>
+    <link type="text/css" rel="stylesheet" href="../../dist/cute.css"/>
+
+    <style type="text/css">
+        html {
+            *overflow: auto;
+        }
+    </style>
+</head>
+<body>
+    <form class="form form-aligned">
+        <fieldset>
+            <legend>aligned form</legend>
+
+            <div class="form-item">
+                <label class="label" for="email">邮箱</label>
+                <input class="input" id="email" type="email" placeholder="邮箱" /> <span class="form-required">*</span> <span class="text-inverse">你必须填写邮箱字段</span>
+            </div>
+            <div class="form-item">
+                <label class="label" for="email1">邮箱</label>
+                <input class="input input-disabled" id="email1" type="email" placeholder="邮箱1" disabled/>
+            </div>
+            <div class="form-item">
+                <label class="label" for="password">密码</label>
+                <input class="input" id="password" type="password" placeholder="密码"> <span class="text-error">密码必须是6-15位字母或数字</span>
+                <div class="text-inverse">6-15位字母或数字</div>
+            </div>
+
+            <div class="form-item">
+                <label class="label">编程语言</label>
+                <label class="checkbox"><input type="checkbox"> java</label>
+                <label class="checkbox"><input type="checkbox" disabled> php</label>
+                <label class="checkbox"><input type="checkbox"> .net</label>
+            </div>
+
+            <div class="form-item">
+                <label class="label">还是编程语言</label>
+                <label class="radio"><input type="radio" name="lang"> java</label>
+                <label class="radio"><input type="radio" name="lang"> php</label>
+                <label class="radio"><input type="radio" name="lang"> .net</label>
+            </div>
+
+            <div class="form-item">
+                <label class="label">还是...编程语言</label>
+                <select class="select">
+                    <option>java</option>
+                    <option>php</option>
+                    <option>objective-c</option>
+                </select>
+            </div>
+
+            <div class="form-item">
+                <span class="input-file-container">
+                    <a class="btn" href="javascript:;">点击选择上传头像</a>
+                    <input class="input-file" type="file" />
+                </span>
+            </div>
+
+            <div class="form-item">
+                <label class="label">多行编辑框</label>
+                <textarea class="textarea" rows="5" cols="50" placeholder="textarea"></textarea>
+            </div>
+
+            <div class="form-item">
+                <button type="submit" class="btn btn-primary">登 录</button>
+                <button type="reset" class="btn">重 置</button>
+            </div>
+        </fieldset>
+    </form>
+
+    <form class="form form-aligned">
+        <fieldset>
+            <legend>form input size</legend>
+
+            <div class="form-item">
+                <input class="input input-smaller" type="text" placeholder="smaller" />
+            </div>
+            <div class="form-item">
+                <input class="input input-small" type="text" placeholder="small" />
+            </div>
+            <div class="form-item">
+                <input class="input" type="text" placeholder="normal" />
+            </div>
+            <div class="form-item">
+                <input class="input input-large" type="text" placeholder="large" />
+            </div>
+            <div class="form-item">
+                <input class="input input-larger" type="text" placeholder="larger" />
+            </div>
+        </fieldset>
+    </form>
+
+    <form class="form form-aligned">
+        <fieldset>
+            <legend>form input style</legend>
+
+            <div class="form-item">
+                <input class="input input-success" type="text" placeholder="success" />
+            </div>
+            <div class="form-item">
+                <input class="input input-info" type="text" placeholder="info" />
+            </div>
+            <div class="form-item">
+                <input class="input input-warn" type="text" placeholder="warn" />
+            </div>
+            <div class="form-item">
+                <input class="input input-error" type="text" placeholder="error" />
+            </div>
+        </fieldset>
+    </form>
+</body>
+</html>
