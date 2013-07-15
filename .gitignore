@@ -1,2 +1,4 @@
 /.idea
 /node_modules
+/sea_modules
+/npm-debug.log

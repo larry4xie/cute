@@ -32,18 +32,18 @@
     .opacity(65);
   }
 }
-.button(@textColor: #fff, @bgColor) {
+.button(@textColor: #333, @bgColor) {
   color: @textColor;
   background-color: @bgColor;
 
   &:hover {
-    background-color: darken(@bgColor, 5%);
+    background-color: darken(@bgColor, @btnHoverDark);
   }
 
   // active state
   // selected state
   &:active, &.btn-selected {
-    background-color: darken(@bgColor, 8%);
+    background-color: darken(@bgColor, @btnActiveDark);
   }
 
   // Disabled state
@@ -56,12 +56,15 @@
 // ------------------------------------
 .btn {
   .buttonCommon();
-  .button(#333, #ededed);
+  .button(@btnTextColor, @btnBgColor);
 }
 
 // ie6 ie7 hack
 input.btn, button.btn {
   *line-height: @baseLineHeight - .4em;
+}
+button.btn {
+  *padding: .25em 1.2em .55em;
 }
 
 a.btn {
@@ -76,12 +79,12 @@ a.btn {
 // --------------------------------------------------
 // Larger
 .btn-larger {
-  font-size: @baseFontSize + 8px;
+  font-size: @baseFontSize + 10px;
 }
 
 // Large
 .btn-large {
-  font-size: @baseFontSize + 4px;
+  font-size: @baseFontSize + 5px;
 }
 
 // Small
@@ -91,93 +94,88 @@ a.btn {
 
 // Smaller
 .btn-smaller {
-  font-size: @baseFontSize - 4px;
+  font-size: @baseFontSize - 3px;
 }
-//
-//.btn-primary {
-//  .button(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, @btnPrimaryBackgroundHighlight, @btnPrimaryTextColor);
-//}
-//
-//// Warning appears are orange
-//.btn-warn {
-//  .button(@btnWarnBackground, @btnWarnBackgroundHighlight, @btnWarnBackgroundHighlight, @btnWarnTextColor);
-//}
-//
-//// Danger and error appear as red
-//.btn-important, .btn-error {
-//  .button(@btnErrorBackground, @btnErrorBackgroundHighlight, @btnErrorBackgroundHighlight, @btnErrorTextColor);
-//}
-//
-//// Success appears as green
-//.btn-success {
-//  .button(@btnSuccessBackground, @btnSuccessBackgroundHighlight, @btnSuccessBackgroundHighlight, @btnSuccessTextColor);
-//}
-//
-//// Info appears as a neutral blue
-//.btn-info {
-//  .button(@btnInfoBackground, @btnInfoBackgroundHighlight, @btnInfoBackgroundHighlight, @btnInfoTextColor);
-//}
-//
-//// Inverse appears as dark gray
-//.btn-inverse {
-//  .button(@btnInverseBackground, @btnInverseBackgroundHighlight, @btnInverseBackgroundHighlight, @btnInverseTextColor);
-//}
-//
-//// Block button
-//// -------------------------
-//.btn-block {
-//  display: block;
-//  padding-left: 0;
-//  padding-right: 0;
-//}
-//
-//// ie6 btn-disabled
-//.btn-disabled,.btn-disabled:hover,.btn-disabled:active{
-//  _filter: ~"alpha(opacity=65)";
-//  _background-color: mix(@btnBackground, @btnBackgroundHighlight, 50%);
-//}
-//// theme
-//.btn-primary-disabled,.btn-primary-disabled:hover,.btn-primary-disabled:active{
-//  _background-color: mix(@btnPrimaryBackground, @btnPrimaryBackgroundHighlight, 50%);
-//}
-//.btn-warn-disabled,.btn-warn-disabled:hover,.btn-warn-disabled:active{
-//  _background-color: mix(@btnWarnBackground, @btnWarnBackgroundHighlight, 50%);
-//}
-//.btn-important-disabled,.btn-important-disabled:hover,.btn-important-disabled:active,
-//.btn-error-disabled,.btn-error-disabled:hover,.btn-error-disabled:active {
-//  _background-color: mix(@btnErrorBackground, @btnErrorBackgroundHighlight, 50%);
-//}
-//.btn-success-disabled,.btn-success-disabled:hover,.btn-success-disabled:active{
-//  _background-color: mix(@btnSuccessBackground, @btnSuccessBackgroundHighlight, 50%);
-//}
-//.btn-info-disabled,.btn-info-disabled:hover,.btn-info-disabled:active{
-//  _background-color: mix(@btnInfoBackground, @btnInfoBackgroundHighlight, 50%);
-//}
-//.btn-inverse-disabled,.btn-inverse-disabled:hover,.btn-inverse-disabled:active{
-//  _background-color: mix(@btnInverseBackground, @btnInverseBackgroundHighlight, 50%);
-//}
-//
-//// ie6 btn-selected
-//.btn-selected, .btn-selected:hover{
-//  _background-color: darken(@btnBackgroundHighlight, 12%);
-//}
-//// theme
-//.btn-primary-selected, .btn-primary-selected:hover{
-//  _background-color: darken(@btnPrimaryBackgroundHighlight, 12%);
-//}
-//.btn-warn-selected, .btn-warn-selected:hover{
-//  _background-color: darken(@btnWarnBackgroundHighlight, 12%);
-//}
-//.btn-important-selected, .btn-important-selected:hover,
-//.btn-error-selected, .btn-error-selected:hover{
-//  _background-color: darken(@btnErrorBackgroundHighlight, 12%);
-//}
-//.btn-success-selected, .btn-success-selected:hover{
-//  _background-color: darken(@btnSuccessBackgroundHighlight, 12%);
-//}
-//.btn-primary-selected, .btn-primary-selected:hover{
-//  _background-color: darken(@btnPrimaryBackgroundHighlight, 12%);
-//}
-//.btn-inverse-selected, .btn-inverse-selected:hover{
-//  _background-color: darken(@btnInverseBackgroundHighlight, 12%);
-//}
+
+// Block button
+// -------------------------
+.btn-block {
+  display: block;
+  width: 100%;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.btn-primary {
+  .button(@btnLightTextColor, @btnBgPrimaryColor);
+}
+
+.btn-inverse {
+  .button(@btnLightTextColor, @btnBgInverseColor);
+}
+
+.btn-success {
+  .button(@btnLightTextColor, @btnBgSuccessColor);
+}
+
+.btn-info {
+  .button(@btnLightTextColor, @btnBgInfoColor);
+}
+
+.btn-warn {
+  .button(@btnLightTextColor, @btnBgWarnColor);;
+}
+
+.btn-error {
+  .button(@btnLightTextColor, @btnBgErrorColor);
+}
+
+// ie6 btn-disabled
+// --------------------------------------------------
+.btn-disabled,.btn-disabled:hover,.btn-disabled:active{
+  _background-color: @btnBgColor;
+}
+// theme
+.btn-primary-disabled,.btn-primary-disabled:hover,.btn-primary-disabled:active{
+  _background-color: @btnBgPrimaryColor;
+}
+.btn-inverse-disabled,.btn-inverse-disabled:hover,.btn-inverse-disabled:active{
+  _background-color: @btnBgInverseColor;
+}
+.btn-success-disabled,.btn-success-disabled:hover,.btn-success-disabled:active{
+  _background-color: @btnBgSuccessColor;
+}
+.btn-info-disabled,.btn-info-disabled:hover,.btn-info-disabled:active{
+  _background-color: @btnBgInfoColor;
+}
+.btn-warn-disabled,.btn-warn-disabled:hover,.btn-warn-disabled:active{
+  _background-color: @btnBgWarnColor;
+}
+.btn-error-disabled,.btn-error-disabled:hover,.btn-error-disabled:active {
+  _background-color: @btnBgErrorColor;
+}
+
+// ie6 btn-selected
+// --------------------------------------------------
+.btn-selected, .btn-selected:hover{
+  _background-color: darken(@btnBgColor, @btnActiveDark);
+}
+// theme
+.btn-primary-selected, .btn-primary-selected:hover{
+  _background-color: darken(@btnBgPrimaryColor, @btnActiveDark);
+}
+.btn-inverse-selected, .btn-inverse-selected:hover{
+  _background-color: darken(@btnBgInverseColor, @btnActiveDark);
+}
+.btn-success-selected, .btn-success-selected:hover{
+  _background-color: darken(@btnBgSuccessColor, @btnActiveDark);
+}
+.btn-info-selected, .btn-info-selected:hover{
+  _background-color: darken(@btnBgInfoColor, @btnActiveDark);
+}
+.btn-warn-selected, .btn-warn-selected:hover{
+  _background-color: darken(@btnBgWarnColor, @btnActiveDark);
+}
+.btn-error-selected, .btn-error-selected:hover{
+  _background-color: darken(@btnBgErrorColor, @btnActiveDark);
+}
