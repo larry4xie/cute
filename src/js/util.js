@@ -15,7 +15,12 @@
     // Save the previous value of the `_` variable.
     var _previous = root._;
 
-    var _ = function() {};
+    // Create a safe reference to the Underscore object for use below.
+    var _ = function(obj) {
+        if (obj instanceof _) return obj;
+        if (!(this instanceof _)) return new _(obj);
+        this._wrapped = obj;
+    };
 
     // 设置为全局变量
     root._ = _;
@@ -379,26 +384,61 @@
     // Function Functions
     // ------------------
 
-    // Delays a function for the given number of milliseconds, and then calls
-    // it with the arguments supplied.
-    _.delay = function(func, wait) {
-        var args = slice.call(arguments, 2);
-        return setTimeout(function(){ return func.apply(null, args); }, wait);
+    // Returns a function that will be executed at most one time, no matter how
+    // often you call it. Useful for lazy initialization.
+    _.once = function(func) {
+        var ran = false;
+        return function() {
+            if (ran) return;
+            ran = true;
+            var memo = func.apply(this, arguments);
+            func = null;
+            return memo;
+        };
     };
 
-    // Shortcut function for checking if an object has a given property directly
-    // on itself (in other words, not on a prototype).
-    _.has = function(obj, key) {
-        return hasOwnProperty.call(obj, key);
+    // Returns a function that will only be executed after being called N times.
+    _.after = function(times, func) {
+        return function() {
+            if (--times < 1) {
+                return func.apply(this, arguments);
+            }
+        };
     };
 
-    // Keep the identity function around for default iterators.
-    _.identity = function(value) {
-        return value;
+    // Returns a function that is the composition of a list of functions, each
+    // consuming the return value of the function that follows.
+    _.compose = function() {
+        var funcs = arguments;
+        return function() {
+            var args = arguments;
+            for (var i = funcs.length - 1; i >= 0; i--) {
+                args = [funcs[i].apply(this, args)];
+            }
+            return args[0];
+        };
     };
 
-    // object Functions
+    // Object Functions
     // ----------------
+
+    // Extend a given object with all the properties in passed-in object(s).
+    _.extend = function(obj) {
+        each(slice.call(arguments, 1), function(source) {
+            if (source) {
+                for (var prop in source) {
+                    obj[prop] = source[prop];
+                }
+            }
+        });
+        return obj;
+    };
+
+    // Create a (shallow-cloned) duplicate of an object.
+    _.clone = function(obj) {
+        if (!_.isObject(obj)) return obj;
+        return _.isArray(obj) ? obj.slice() : _.extend({}, obj);
+    };
 
     // Retrieve the names of an object's properties.
     // Delegates to **ECMAScript 5**'s native `Object.keys`
@@ -416,12 +456,18 @@
         return values;
     };
 
+    // Convert an object into a list of `[key, value]` pairs.
+    _.pairs = function(obj) {
+        var pairs = [];
+        for (var key in obj) if (_.has(obj, key)) pairs.push([key, obj[key]]);
+        return pairs;
+    };
 
-    // Retrieve the values of an object's properties.
-    _.values = function(obj) {
-        var values = [];
-        for (var key in obj) if (_.has(obj, key)) values.push(obj[key]);
-        return values;
+    // Invert the keys and values of an object. The values must be serializable.
+    _.invert = function(obj) {
+        var result = {};
+        for (var key in obj) if (_.has(obj, key)) result[obj[key]] = key;
+        return result;
     };
 
     // Return a sorted list of the function names available on the object.
@@ -432,6 +478,32 @@
             if (_.isFunction(obj[key])) names.push(key);
         }
         return names.sort();
+    };
+
+    // Return a copy of the object only containing the whitelisted properties.
+    _.pick = function(obj) {
+        var copy = {};
+        var keys = concat.apply(ArrayProto, slice.call(arguments, 1));
+        each(keys, function(key) {
+            if (key in obj) copy[key] = obj[key];
+        });
+        return copy;
+    };
+
+    // Return a copy of the object without the blacklisted properties.
+    _.omit = function(obj) {
+        var copy = {};
+        var keys = concat.apply(ArrayProto, slice.call(arguments, 1));
+        for (var key in obj) {
+            if (!_.contains(keys, key)) copy[key] = obj[key];
+        }
+        return copy;
+    };
+
+    // Shortcut function for checking if an object has a given property directly
+    // on itself (in other words, not on a prototype).
+    _.has = function(obj, key) {
+        return hasOwnProperty.call(obj, key);
     };
 
     // Is a given array, string, or object empty?
@@ -459,6 +531,31 @@
         return obj === Object(obj);
     };
 
+    // Is a given object a finite number?
+    _.isFinite = function(obj) {
+        return isFinite(obj) && !isNaN(parseFloat(obj));
+    };
+
+    // Is the given value `NaN`? (NaN is the only number which does not equal itself).
+    _.isNaN = function(obj) {
+        return _.isNumber(obj) && obj != +obj;
+    };
+
+    // Is a given value a boolean?
+    _.isBoolean = function(obj) {
+        return obj === true || obj === false || toString.call(obj) == '[object Boolean]';
+    };
+
+    // Is a given value equal to null?
+    _.isNull = function(obj) {
+        return obj === null;
+    };
+
+    // Is a given variable undefined?
+    _.isUndefined = function(obj) {
+        return obj === void 0;
+    };
+
     // Add some isType methods: isArguments, isFunction, isString, isNumber, isDate, isRegExp.
     each(['Arguments', 'Function', 'String', 'Number', 'Date', 'RegExp'], function(name) {
         _['is' + name] = function(obj) {
@@ -466,8 +563,35 @@
         };
     });
 
+    // Define a fallback version of the method in browsers (ahem, IE), where
+    // there isn't any inspectable "Arguments" type.
+    if (!_.isArguments(arguments)) {
+        _.isArguments = function(obj) {
+            return !!(obj && _.has(obj, 'callee'));
+        };
+    }
+
+    // Optimize `isFunction` if appropriate.
+    if (typeof (/./) !== 'function') {
+        _.isFunction = function(obj) {
+            return typeof obj === 'function';
+        };
+    }
+
     // Utility Functions
     // -----------------
+
+    // Keep the identity function around for default iterators.
+    _.identity = function(value) {
+        return value;
+    };
+
+    // Run a function **n** times.
+    _.times = function(n, iterator, context) {
+        var accum = Array(Math.max(0, n));
+        for (var i = 0; i < n; i++) accum[i] = iterator.call(context, i);
+        return accum;
+    };
 
     // Return a random integer between min and max (inclusive).
     _.random = function(min, max) {
@@ -477,6 +601,104 @@
         }
         return min + Math.floor(Math.random() * (max - min + 1));
     };
+
+    // Generate a unique integer id (unique within the entire client session).
+    // Useful for temporary DOM ids.
+    var idCounter = 0;
+    _.uniqueId = function(prefix) {
+        var id = ++idCounter + '';
+        return prefix ? prefix + id : id;
+    };
+
+    // Add your own custom functions to the Underscore object.
+    _.mixin = function(obj) {
+        each(_.functions(obj), function(name) {
+            var func = _[name] = obj[name];
+            _.prototype[name] = function() {
+                var args = [this._wrapped];
+                push.apply(args, arguments);
+                return result.call(this, func.apply(_, args));
+            };
+        });
+    };
+
+    // List of HTML entities for escaping.
+    var entityMap = {
+        escape: {
+            '&': '&amp;',
+            '<': '&lt;',
+            '>': '&gt;',
+            '"': '&quot;',
+            "'": '&#x27;'
+        }
+    };
+    entityMap.unescape = _.invert(entityMap.escape);
+
+    // Regexes containing the keys and values listed immediately above.
+    var entityRegexes = {
+        escape:   new RegExp('[' + _.keys(entityMap.escape).join('') + ']', 'g'),
+        unescape: new RegExp('(' + _.keys(entityMap.unescape).join('|') + ')', 'g')
+    };
+
+    // Functions for escaping and unescaping strings to/from HTML interpolation.
+    _.each(['escape', 'unescape'], function(method) {
+        _[method] = function(string) {
+            if (string == null) return '';
+            return ('' + string).replace(entityRegexes[method], function(match) {
+                return entityMap[method][match];
+            });
+        };
+    });
+
+    // Chain Functions
+    // ---------------
+
+    // Add all of functions to the wrapper object.
+    _.mixin(_);
+
+    // Add a "chain" function, which will delegate to the wrapper.
+    _.chain = function(obj) {
+        return _(obj).chain();
+    };
+
+    _.extend(_.prototype, {
+
+        // Start chaining a wrapped Underscore object.
+        chain: function() {
+            this._chain = true;
+            return this;
+        },
+
+        // Extracts the result from a wrapped and chained object.
+        value: function() {
+            return this._wrapped;
+        }
+
+    });
+
+    // Helper function to continue chaining intermediate results.
+    var result = function(obj) {
+        return this._chain ? _(obj).chain() : obj;
+    };
+
+    // Add all mutator Array functions to the wrapper.
+    each(['pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift'], function(name) {
+        var method = ArrayProto[name];
+        _.prototype[name] = function() {
+            var obj = this._wrapped;
+            method.apply(obj, arguments);
+            if ((name == 'shift' || name == 'splice') && obj.length === 0) delete obj[0];
+            return result.call(this, obj);
+        };
+    });
+
+    // Add all accessor Array functions to the wrapper.
+    each(['concat', 'join', 'slice'], function(name) {
+        var method = ArrayProto[name];
+        _.prototype[name] = function() {
+            return result.call(this, method.apply(this._wrapped, arguments));
+        };
+    });
 
     // 支持模块化js
     if ( typeof define === "function") {
