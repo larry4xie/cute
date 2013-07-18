@@ -5,6 +5,7 @@
  *
  * thanks to:
  * http://underscorejs.org/
+ * http://epeli.github.io/underscore.string/
  *
  */
 
@@ -34,7 +35,7 @@
     var
         ArrayProto       = Array.prototype,
         ObjProto         = Object.prototype,
-        FuncProto        = Function.prototype;
+        StrProto        = String.prototype;
 
     // Create quick reference variables for speed access to core prototypes.
     var
@@ -49,16 +50,15 @@
     var
         nativeForEach      = ArrayProto.forEach,
         nativeMap          = ArrayProto.map,
-        nativeReduce       = ArrayProto.reduce,
-        nativeReduceRight  = ArrayProto.reduceRight,
         nativeFilter       = ArrayProto.filter,
         nativeEvery        = ArrayProto.every,
         nativeSome         = ArrayProto.some,
         nativeIndexOf      = ArrayProto.indexOf,
-        nativeLastIndexOf  = ArrayProto.lastIndexOf,
         nativeIsArray      = Array.isArray,
         nativeKeys         = Object.keys,
-        nativeBind         = FuncProto.bind;
+        nativeTrim         = StrProto.trim,
+        nativeTrimRight    = StrProto.trimRight,
+        nativeTrimLeft     = StrProto.trimLeft;
 
     // 解决命名空间冲突
     _.noConflict = function() {
@@ -650,36 +650,120 @@
         };
     });
 
+    // String Functions
+    // ----------------
+    _.numberFormat = function(number, dec, dsep, tsep) {
+        if (_.isNaN(number) || number == null) return '';
+
+        number = number.toFixed(dec);
+        tsep = typeof tsep == 'string' ? tsep : ',';
+
+        var parts = number.split('.'), fnums = parts[0],
+            decimals = parts[1] ? (dsep || '.') + parts[1] : '';
+
+        return fnums.replace(/(\d)(?=(?:\d{3})+$)/g, '$1' + tsep) + decimals;
+    };
+
+    _.isBlank = function(str){
+        if (str == null) str = '';
+        return (/^\s*$/).test(str);
+    };
+
+    _.capitalize = function(str){
+        str = str == null ? '' : String(str);
+        return str.charAt(0).toUpperCase() + str.slice(1);
+    };
+
+    _.chop = function(str, step){
+        if (str == null) return [];
+        str = String(str);
+        return step > 0 ? str.match(new RegExp('.{1,' + step + '}', 'g')) : [str];
+    };
+
+    _.lines = function(str) {
+        if (str == null) return [];
+        return String(str).split("\n");
+    };
+
+    _.words = function(str, delimiter) {
+        if (_.isBlank(str)) return [];
+        return _.trim(str).split(delimiter || /\s+/);
+    };
+
+    _.startsWith = function(str, starts){
+        if (starts === '') return true;
+        if (str == null || starts == null) return false;
+        str = String(str); starts = String(starts);
+        return str.length >= starts.length && str.slice(0, starts.length) === starts;
+    };
+
+    _.endsWith = function(str, ends){
+        if (ends === '') return true;
+        if (str == null || ends == null) return false;
+        str = String(str); ends = String(ends);
+        return str.length >= ends.length && str.slice(str.length - ends.length) === ends;
+    };
+
+    _.trim = function(str){
+        if (str == null) return '';
+        if (nativeTrim) return nativeTrim.call(str);
+        return String(str).replace(/^\s+|\s+$/g, "");
+    };
+
+    _.ltrim = function(str){
+        if (str == null) return '';
+        if (nativeTrimLeft) return nativeTrimLeft.call(str);
+        return String(str).replace(/^\s+/, "");
+    };
+
+    _.rtrim = function(str){
+        if (str == null) return '';
+        if (nativeTrimRight) return nativeTrimRight.call(str);
+        return String(str).replace(/\s+$/g, "");
+    };
+
+    _.truncate = function(str, length, truncateStr){
+        if (str == null) return '';
+        str = String(str); truncateStr = truncateStr || '...';
+        return str.length > length ? str.slice(0, length) + truncateStr : str;
+    };
+
+    var strRepeat = function(str, qty){
+        if (qty < 1) return '';
+        var result = '';
+        while (qty > 0) {
+            if (qty & 1) result += str;
+            qty >>= 1, str += str;
+        }
+        return result;
+    };
+
+    _.repeat = function(str, qty, separator){
+        if (str == null) return '';
+
+        // using faster implementation if separator is not needed;
+        if (separator == null) return strRepeat(String(str), qty);
+
+        // this one is about 300x slower in Google Chrome
+        for (var repeat = []; qty > 0; repeat[--qty] = str) {}
+        return repeat.join(separator);
+    };
+
     // Chain Functions
     // ---------------
-
-    // Add all of functions to the wrapper object.
-    _.mixin(_);
 
     // Add a "chain" function, which will delegate to the wrapper.
     _.chain = function(obj) {
         return _(obj).chain();
     };
 
-    _.extend(_.prototype, {
-
-        // Start chaining a wrapped Underscore object.
-        chain: function() {
-            this._chain = true;
-            return this;
-        },
-
-        // Extracts the result from a wrapped and chained object.
-        value: function() {
-            return this._wrapped;
-        }
-
-    });
-
     // Helper function to continue chaining intermediate results.
     var result = function(obj) {
         return this._chain ? _(obj).chain() : obj;
     };
+
+    // Add all of functions to the wrapper object.
+    _.mixin(_);
 
     // Add all mutator Array functions to the wrapper.
     each(['pop', 'push', 'reverse', 'shift', 'sort', 'splice', 'unshift'], function(name) {
@@ -698,6 +782,21 @@
         _.prototype[name] = function() {
             return result.call(this, method.apply(this._wrapped, arguments));
         };
+    });
+
+    _.extend(_.prototype, {
+
+        // Start chaining a wrapped Underscore object.
+        chain: function() {
+            this._chain = true;
+            return this;
+        },
+
+        // Extracts the result from a wrapped and chained object.
+        value: function() {
+            return this._wrapped;
+        }
+
     });
 
     // 支持模块化js

@@ -61,6 +61,20 @@ uniqueId
 escape
 unescape
 
+// String Functions
+// ----------------
+numberFormat
+isBlank
+capitalize
+chop
+lines
+words
+startsWith
+endsWith
+trim, ltrim, rtrim
+truncate
+repeat
+
 // Chain Functions
 // ---------------
 chain

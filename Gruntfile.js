@@ -1,6 +1,7 @@
 module.exports = function(grunt) {
     grunt.initConfig({
         pkg: grunt.file.readJSON('package.json'),
+
         less: {
             cute: {
                 options: {
@@ -9,6 +10,17 @@ module.exports = function(grunt) {
                 },
                 files:  {
                     'dist/cute.css' : 'src/css/cute.less'
+                }
+            }
+        },
+
+        uglify: {
+            util: {
+                options: {
+                    report: 'gzip'
+                },
+                files: {
+                    'src/js/util.min.js': 'src/js/util.js'
                 }
             }
         }
@@ -23,4 +35,6 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-uglify');
 
     grunt.registerTask('default', ['less']);
+
+    grunt.registerTask('util', ['uglify']);
 };
