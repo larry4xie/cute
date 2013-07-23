@@ -5,36 +5,24 @@ module.exports = function(grunt) {
         less: {
             cute: {
                 options: {
-                    report: 'gzip',
-                    yuicompress: true
+                    yuicompress: true,
+                    report: 'gzip'
                 },
                 files:  {
                     'dist/cute.css' : 'src/css/cute.less'
                 }
-            }
-        },
-
-        uglify: {
-            util: {
-                options: {
-                    report: 'gzip'
-                },
-                files: {
-                    'src/js/util.min.js': 'src/js/util.js'
+            },
+            'cute-debug': {
+                files:  {
+                    'dist/cute-debug.css' : 'src/css/cute.less'
                 }
             }
         }
     });
 
-    grunt.loadNpmTasks('grunt-contrib-clean');
-    grunt.loadNpmTasks('grunt-contrib-concat');
-
+    // load
     grunt.loadNpmTasks('grunt-contrib-less');
-    grunt.loadNpmTasks('grunt-contrib-cssmin');
 
-    grunt.loadNpmTasks('grunt-contrib-uglify');
-
-    grunt.registerTask('default', ['less']);
-
-    grunt.registerTask('util', ['uglify']);
+    // task
+    grunt.registerTask('default', ['less:cute', 'less:cute-debug']); // default
 };
