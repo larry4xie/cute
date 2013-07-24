@@ -20,8 +20,11 @@
   }
 }
 
-.input {
+.input, .textarea {
   width: 170px;
+}
+.select {
+  width: 170px + 12px; // width bug
 }
 
 .input-file-container {
@@ -48,7 +51,7 @@
 }
 
 // input size
-.input, .textarea, select {
+.input, .textarea {
   &-smaller {
     width: 60px;
   }
@@ -60,6 +63,21 @@
   }
   &-larger {
     width: 460px;
+  }
+}
+
+.select { // width bug
+  &-smaller {
+    width: 60px + 12px;
+  }
+  &-small {
+    width: 100px + 12px;
+  }
+  &-large {
+    width: 280px + 12px;
+  }
+  &-larger {
+    width: 460px + 12px;
   }
 }
 

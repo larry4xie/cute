@@ -809,8 +809,12 @@ a.btn:hover {
   *margin-left: -7px;
   *zoom: 1;
 }
-.input {
+.input,
+.textarea {
   width: 170px;
+}
+.select {
+  width: 182px;
 }
 .input-file-container {
   display: inline-block;
@@ -840,24 +844,32 @@ a.btn:hover {
   cursor: pointer;
 }
 .input-smaller,
-.textarea-smaller,
-select-smaller {
+.textarea-smaller {
   width: 60px;
 }
 .input-small,
-.textarea-small,
-select-small {
+.textarea-small {
   width: 100px;
 }
 .input-large,
-.textarea-large,
-select-large {
+.textarea-large {
   width: 280px;
 }
 .input-larger,
-.textarea-larger,
-select-larger {
+.textarea-larger {
   width: 460px;
+}
+.select-smaller {
+  width: 72px;
+}
+.select-small {
+  width: 112px;
+}
+.select-large {
+  width: 292px;
+}
+.select-larger {
+  width: 472px;
 }
 .input,
 .select,
