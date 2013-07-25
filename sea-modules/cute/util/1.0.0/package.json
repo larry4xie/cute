@@ -1,0 +1,23 @@
+{
+  "family": "cute",
+  "name": "util",
+  "version": "1.0.0",
+  "description": "cute js util",
+  "homepage": "",
+  "author": "",
+  "repository": {
+    "type": "git",
+    "url": "https://git.oschina.net/xang529/cute-util.git"
+  },
+  "bugs": {
+    "url": ""
+  },
+  "keywords": ["cute", "util"],
+  "licenses": "MIT",
+  "spm": {
+    "output": ["util.js"],
+    "alias": {},
+    "devAlias": {},
+    "engines": {}
+  }
+}
