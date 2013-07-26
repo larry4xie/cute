@@ -7,5 +7,5 @@ JS基于[Seajs](http://seajs.org/)、[SpmJs](https://spmjs.org/)、[CMD](https:/
 ## CSS
 
 ## JavaScript
-[JavaScript Lib Description](http://git.oschina.net/xang529/cute/blob/master/docs/JavaScript%20Lib%20Description.md)
+[JavaScript Lib Description](./src/js/JavaScript%20Lib%20Description.md)
 
