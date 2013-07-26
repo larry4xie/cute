@@ -4,7 +4,7 @@
 基于seajs, cmd, arale, spm等技术和工具进行js库的构建
 
 ## 主要组成部分
-采用商城模式（相对于大教堂与集市模式）
+采用商城模式（相对于[大教堂与集市](http://lifesinger.wordpress.com/2011/04/05/seajs-080-released/)模式）
 
 主要有以下几个部分组成：
 
