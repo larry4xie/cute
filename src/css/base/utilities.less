@@ -128,3 +128,47 @@
   content:" ";font-size: 0px;line-height: 0;
   width: @smallGutterWidth;
 }
+
+// position:fixed expression实现
+// 不建议多用，只在必要的时候使用，因为expression会非常消耗CPU，很多时候要求不是很高的地方可以使用js模拟实现
+.fixed{
+  position:fixed;
+}
+/* hack for ie6 */
+.fixed-top, .fixed-right, .fixed-bottom, .fixed-left {
+  _position:absolute;
+}
+/* 当不是 https 时，可以把 # 换成 about:blank 以提升效率 */
+// fixed 闪动bug
+html,html body {
+  _background-image:url('about:blank');
+  _background-attachment:fixed;
+}
+/* 相当于正常的 position:fixed; top:0;  */
+.fixed-top {
+  bottom:auto;
+  top:0;
+  _bottom:auto;
+  _top:"expression(eval(document.documentElement.scrollTop))";
+}
+/* 相当于正常的 position:fixed;bottom:0px; */
+.fixed-bottom {
+  bottom:0;
+  top:auto;
+  _bottom:auto;
+  _top:"expression(eval(document.documentElement.scrollTop+document.documentElement.clientHeight-this.offsetHeight-(parseInt(this.currentStyle.marginTop,10)||0)-(parseInt(this.currentStyle.marginBottom,10)||0)))";
+}
+/* 相当于正常的 position:fixed;left:0px; */
+.fixed-left {
+  left:0;
+  _position:absolute;
+  right:auto;
+  _left:"expression(eval(document.documentElement.scrollLeft))";
+}
+/* 相当于正常的 position:fixed;right:0; */
+.fixed-right {
+  right:0;
+  left:auto;
+  _right:auto;
+  _left:"expression(eval(document.documentElement.scrollLeft+document.documentElement.clientWidth-this.offsetWidth)-(parseInt(this.currentStyle.marginLeft,10)||0)-(parseInt(this.currentStyle.marginRight,10)||0))";
+}
