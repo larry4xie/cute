@@ -77,6 +77,15 @@ cute js util
 * 依赖：none
 * git：`https://github.com/aralejs/detector`
 
+#### easing `arale
+Easing 是动画的平滑函数扩展包。由于 jQuery 自带的比较少，通过这个包可以增加更多平滑函数
+
+提供模块化和jquery plugin 两种方法使用。
+
+* 来源：arale/easing/1.0.0
+* 依赖：jquery
+* git：`https://github.com/aralejs/easing`
+
 #### messenger `arale`
 跨域 Iframe 通信解决方案
 
