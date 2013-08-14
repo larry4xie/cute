@@ -114,6 +114,12 @@ iframe and html5 uploader
 * 依赖：jquery
 * git：`https://github.com/aralejs/upload`
 
+#### json `gallery`
+JSON in JavaScript
+
+* 来源：gallery/json/1.0.3
+* 依赖：none
+* git：https://github.com/douglascrockford/JSON-js
 
 ### Widgets
 
