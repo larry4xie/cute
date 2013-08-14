@@ -23,7 +23,8 @@
             "messenger": "arale/messenger/1.0.2/messenger",
             "placeholder": "arale/placeholder/1.1.0/placeholder",
             "position": "arale/position/1.0.1/position",
-            "upload": "arale/upload/1.0.0/upload"
+            "upload": "arale/upload/1.0.0/upload",
+            "json": "gallery/json/1.0.3/json"
         }
     }
 }
