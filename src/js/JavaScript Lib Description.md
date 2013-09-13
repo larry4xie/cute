@@ -58,10 +58,10 @@ write less, do more.
 来源：http://jquery.com/
 版本：1.9.1
 
-### util `cute`
-cute js util
+### core `cute`
+cute js core
 
-来源：cute/util
+来源：cute/core
 
 #### cookie `arale`
 提供 Cookie 操作方法
@@ -110,7 +110,7 @@ Easing 是动画的平滑函数扩展包。由于 jQuery 自带的比较少，�
 #### upload `arale`
 iframe and html5 uploader
 
-* 来源：arale/upload/1.0.0
+* 来源：arale/upload/1.0.1
 * 依赖：jquery
 * git：`https://github.com/aralejs/upload`
 

@@ -1,4 +1,21 @@
 /**
+ * cute core
+ * util: 创建全局变量'_'
+ * 创建一些全局方法：方法使用'_'开头
+ *  _log
+ *
+ */
+define("cute/core/1.0.0/core-debug", [ "./util-debug" ], function(require) {
+    require("./util-debug");
+});
+
+(function() {
+    this._log = function(msg, type) {
+        console && console[type || (type = "log")] && console[type](msg);
+    };
+}).call(this);
+
+/**
  * cute util function
  *
  * support: cmd
@@ -697,7 +714,7 @@
     });
     // 支持模块化js
     if (typeof define === "function") {
-        define("cute/util/1.0.0/util-debug", [], function() {
+        define("cute/core/1.0.0/util-debug", [], function() {
             return _;
         });
     }

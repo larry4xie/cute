@@ -16,14 +16,14 @@
             "widget": "arale/widget/1.1.1/widget",
 
             "$": "jquery/jquery/1.9.1/jquery",
-            "cute/util": "cute/util/1.0.0/util",
+            "cute/core": "cute/core/1.0.0/core",
             "base": "arale/cookie/1.0.2/cookie",
             "detector": "arale/detector/1.2.1/detector",
             "easing": "arale/easing/1.0.0/easing",
             "messenger": "arale/messenger/1.0.2/messenger",
             "placeholder": "arale/placeholder/1.1.0/placeholder",
             "position": "arale/position/1.0.1/position",
-            "upload": "arale/upload/1.0.0/upload",
+            "upload": "arale/upload/1.0.1/upload",
             "json": "gallery/json/1.0.3/json"
         }
     }

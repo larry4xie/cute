@@ -1,21 +1,21 @@
 {
   "family": "cute",
-  "name": "util",
+  "name": "core",
   "version": "1.0.0",
-  "description": "cute js util",
+  "description": "cute js core",
   "homepage": "",
   "author": "",
   "repository": {
     "type": "git",
-    "url": "https://git.oschina.net/xang529/cute-util.git"
+    "url": "https://git.oschina.net/xang529/cute-core.git"
   },
   "bugs": {
     "url": ""
   },
-  "keywords": ["cute", "util"],
+  "keywords": ["cute", "core"],
   "licenses": "MIT",
   "spm": {
-    "output": ["util.js"],
+    "output": ["core.js"],
     "alias": {},
     "devAlias": {},
     "engines": {}
