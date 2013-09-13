@@ -1,5 +1,9 @@
-/*
+/**
  * button style
+ * 1. 边距使用指定像素，因为可能需要和其他组件如input组合，以及一些bug
+ * 2. 在可以的情况下推荐使用a不要使用input和button，因为a的表现最一致；其次使用button，不要用input
+ * bug:
+ * > ie 6/7 获取焦点黑框bug使用去除border方式
  */
 .buttonCommon() {
   .inline-block();
@@ -11,8 +15,7 @@
   font-size: @baseFontSize;
   line-height: @baseLineHeight;
   *line-height: @baseLineHeight;
-  border: 0;
-  padding: .4em 1.2em;
+  padding: @componentPadding 1.2em;
 
   // Active state
   &:active {
@@ -35,6 +38,7 @@
 .button(@textColor: #333, @bgColor) {
   color: @textColor;
   background-color: @bgColor;
+  border: 1px solid darken(@bgColor, @btnBorderDark);
 
   &:hover {
     background-color: darken(@bgColor, @btnHoverDark);
@@ -58,13 +62,15 @@
   .buttonCommon();
   .button(@btnTextColor, @btnBgColor);
 }
-
 // ie6 ie7 hack
 input.btn, button.btn {
-  *line-height: @baseLineHeight - .4em;
+  //*line-height: @baseLineHeight - .3em;
+  *border: none !important;
+  *padding: @componentPadding - 1 1.2em @componentPadding - 1;
+
 }
-button.btn {
-  *padding: .25em 1.2em .55em;
+input.btn {
+  _padding: @componentPadding 1.2em @componentPadding - 2;
 }
 
 a.btn {
@@ -77,25 +83,18 @@ a.btn {
 
 // Button Sizes
 // --------------------------------------------------
-// Larger
-.btn-larger {
-  font-size: @baseFontSize + 10px;
-}
-
 // Large
 .btn-large {
-  font-size: @baseFontSize + 5px;
+  font-size: @baseFontSize + 8px;
+  padding: @componentPadding*1.5 1.2em;
 }
 
 // Small
 .btn-small {
   font-size: @baseFontSize - 2px;
+  padding: @componentPadding/2 .8em;
 }
 
-// Smaller
-.btn-smaller {
-  font-size: @baseFontSize - 3px;
-}
 
 // Block button
 // -------------------------
@@ -104,6 +103,7 @@ a.btn {
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  *border: none !important;
 }
 
 .btn-primary {
