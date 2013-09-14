@@ -616,10 +616,10 @@ dd {
   font-size: 12px;
   line-height: 1.5em;
   *line-height: 1.5em;
-  border: 0;
-  padding: .4em 1.2em;
+  padding: 4px 1.2em;
   color: #333333;
   background-color: #ededed;
+  border: 1px solid #cecece;
 }
 .btn:active {
   outline: 0;
@@ -646,12 +646,13 @@ dd {
 .btn.btn-disabled:active {
   background-color: #ededed;
 }
+.btn-noborder {
+  *border: 0;
+  *padding: 5px 1.2em;
+}
 input.btn,
 button.btn {
   *line-height: 1.1em;
-}
-button.btn {
-  *padding: .25em 1.2em .55em;
 }
 a.btn {
   margin: 0px;
@@ -662,15 +663,19 @@ a.btn:hover {
 }
 .btn-larger {
   font-size: 22px;
+  padding: 10px 1.2em;
 }
 .btn-large {
   font-size: 17px;
+  padding: 6px 1.2em;
 }
 .btn-small {
   font-size: 10px;
+  padding: 2px 1em;
 }
 .btn-smaller {
   font-size: 9px;
+  padding: 0 .5em;
 }
 .btn-block {
   display: block;
@@ -681,6 +686,7 @@ a.btn:hover {
 .btn-primary {
   color: #ffffff;
   background-color: #006dbc;
+  border: 1px solid #004a7f;
 }
 .btn-primary:hover {
   background-color: #005b9d;
@@ -697,6 +703,7 @@ a.btn:hover {
 .btn-inverse {
   color: #ffffff;
   background-color: #444444;
+  border: 1px solid #252525;
 }
 .btn-inverse:hover {
   background-color: #353535;
@@ -713,6 +720,7 @@ a.btn:hover {
 .btn-success {
   color: #ffffff;
   background-color: #468847;
+  border: 1px solid #316032;
 }
 .btn-success:hover {
   background-color: #3c743c;
@@ -729,6 +737,7 @@ a.btn:hover {
 .btn-info {
   color: #ffffff;
   background-color: #3a87ad;
+  border: 1px solid #2b637f;
 }
 .btn-info:hover {
   background-color: #327596;
@@ -745,6 +754,7 @@ a.btn:hover {
 .btn-warn {
   color: #ffffff;
   background-color: #c09853;
+  border: 1px solid #9c7839;
 }
 .btn-warn:hover {
   background-color: #b38942;
@@ -761,6 +771,7 @@ a.btn:hover {
 .btn-error {
   color: #ffffff;
   background-color: #b94a48;
+  border: 1px solid #8e3836;
 }
 .btn-error:hover {
   background-color: #a4403f;
@@ -1025,6 +1036,31 @@ a.btn:hover {
   margin-left: -160px;
   width: 150px;
   text-align: right;
+}
+.input-append,
+.input-prepend {
+  font-size: 0;
+  white-space: nowrap;
+  vertical-align: middle;
+}
+.input-append .add-on,
+.input-prepend .add-on {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  font-size: 12px;
+  line-height: 1.5em;
+  padding: 4px 5px;
+  background-color: #eeeeee;
+  border: 1px solid #cccccc;
+}
+.input-prepend .add-on,
+.input-prepend .btn {
+  margin-right: -1px;
+}
+.input-append .add-on,
+.input-append .btn {
+  margin-left: -1px;
 }
 /**
  * icon font

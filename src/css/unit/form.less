@@ -1,5 +1,6 @@
-/*
+/**
  *  form style
+ *  prepended and appended input 不要换行，设置font-size;0 ie低版本会有其他bug
  */
 // default form style is inline
 .form {
@@ -27,12 +28,14 @@
   width: 170px + 12px; // width bug
 }
 
+// 按钮不能太大，否则ie需要双击触发
 .input-file-container {
   .inline-block();
   position:relative;
   cursor:pointer;
   overflow:hidden;
   vertical-align:middle;
+  _padding-bottom: 1px; // ie6 被挡住一个像素bug
 
   .input-file {
     position:absolute;
@@ -42,7 +45,6 @@
     _font-size:12px;
     _zoom:10; /* overwrite */
     height:100%;
-    letter-spacing: 2em;
     _height:auto;
     opacity:0;
     filter:alpha(opacity=0);
@@ -82,11 +84,14 @@
 }
 
 .input, .select, .textarea {
-  padding: 4px 6px;
+  padding: @componentPadding 6px;
   border: 1px solid @formBorderColor;
   &:focus {
     outline: 0;
   }
+}
+.input {
+  height: @baseLineHeight;
 }
 
 .input, .textarea {
@@ -202,5 +207,32 @@
     margin-left: -160px;
     width: 150px;
     text-align: right;
+  }
+}
+
+.input-add-on,{
+  // font-size: 0; // white space collapse hack
+  white-space: nowrap; // Prevent span and input from separating
+
+  .add-on {
+    .inline-block();
+    vertical-align: middle;
+    font-size: @baseFontSize;
+    line-height: @baseLineHeight;
+    padding: @componentPadding @componentPadding + 1;
+    background-color: @grayLighter;
+    border: 1px solid @formBorderColor;
+    position: relative;
+    z-index: 2;
+  }
+  .btn{
+    position: relative;
+    z-index: 2;
+  }
+  .add-on-p {
+    margin-right: -1px;
+  }
+  .add-on-a {
+    margin-left: -1px;
   }
 }

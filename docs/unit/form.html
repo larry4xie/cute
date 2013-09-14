@@ -40,7 +40,7 @@
             <div class="form-item">
                 <label class="label">还是编程语言</label>
                 <label class="radio"><input type="radio" name="lang"> java</label>
-                <label class="radio"><input type="radio" name="lang"> php</label>
+                <label class="radio"><input type="radio" name="lang" disabled> php</label>
                 <label class="radio"><input type="radio" name="lang"> .net</label>
             </div>
 
@@ -59,6 +59,12 @@
                     <input class="input-file" type="file" />
                 </span>
             </div>
+            <div class="form-item">
+                <span class="input-file-container">
+                    <a href="javascript:;">点击选择上传头像</a>
+                    <input class="input-file" type="file" />
+                </span>
+            </div>
 
             <div class="form-item">
                 <label class="label">多行编辑框</label>
@@ -66,8 +72,8 @@
             </div>
 
             <div class="form-item">
-                <button type="submit" class="btn btn-primary">登 录</button>
-                <button type="reset" class="btn">重 置</button>
+                <button type="submit" class="btn btn-primary">登录</button>&nbsp;
+                <button type="reset" class="btn">重置</button>
             </div>
         </fieldset>
     </form>
@@ -109,6 +115,55 @@
             </div>
             <div class="form-item">
                 <input class="input input-error" type="text" placeholder="error" />
+            </div>
+        </fieldset>
+    </form>
+
+    <form class="form form-aligned">
+        <fieldset>
+            <legend>form input add-on</legend>
+
+            <div class="form-item">
+                <div class="input-add-on">
+                    <span class="add-on add-on-p">@</span><input class="input" type="text" placeholder="success" />
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="input-add-on">
+                    <a href="javascript:;" class="btn add-on-p">@</a><input class="input" type="text" placeholder="success" />
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="input-add-on">
+                    <a href="javascript:;" class="btn btn-primary add-on-p">@</a><input class="input" type="text" placeholder="success" />
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="input-add-on">
+                    <input class="input" type="text" placeholder="success" /><span class="add-on add-on-a">.00</span>
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="input-add-on">
+                    <input class="input" type="text" placeholder="success" /><a href="javascript:;" class="btn add-on-a">.00</a>
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="input-add-on">
+                    <input class="input" type="text" placeholder="success" /><a href="javascript:;" class="btn btn-primary add-on-a">.00</a>
+                </div>
+            </div>
+
+            <div class="form-item">
+                <div class="input-add-on">
+                    <span class="add-on add-on-p">@</span><input class="input" type="text" placeholder="success" /><span class="add-on add-on-a">.00</span>
+                </div>
+            </div>
+            <div class="form-item">
+                <div class="input-add-on">
+                    <a href="javascript:;" class="btn btn-primary add-on-p">@</a><input class="input" type="text" placeholder="success" /><a href="javascript:;" class="btn btn-primary add-on-a">.00</a>
+                </div>
             </div>
         </fieldset>
     </form>

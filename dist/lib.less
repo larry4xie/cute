@@ -14,6 +14,12 @@
   height: @height;
 }
 
+.min-height(@width) {
+  min-height: @width;
+  height: auto;
+  _height: @width;
+}
+
 // 透明度
 .opacity(@opacity) {
   //-moz-opacity: @opacity / 100;
