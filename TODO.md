@@ -2,7 +2,6 @@
 * ui/breadcrumb
 * ui/callout
 * ui/notify
-* ui/button-groups
 * ui/progress-bar
 * ui/panel
 * ui/gap

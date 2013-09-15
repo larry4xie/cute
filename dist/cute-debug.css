@@ -850,7 +850,7 @@ input.btn-block {
 }
 /**
  *  form style
- *  prepended and appended input 不要换行，设置font-size;0 ie低版本会有其他bug
+ *  prepended and appended input 不要换行，设置font-size;0 ie低版本需要float解决其他bug
  */
 .form fieldset {
   border: 0;
@@ -1720,4 +1720,55 @@ a.badge:hover {
 .emlabel-error,
 .badge-error {
   background-color: #b94a48;
+}
+/**
+ * button group
+ */
+.btn-group {
+  display: inline-block;
+  *display: inline;
+  position: relative;
+  font-size: 0;
+  vertical-align: middle;
+  white-space: nowrap;
+  *margin-left: .3em;
+  zoom: 1;
+}
+.btn-group:first-child {
+  *margin-left: 0;
+}
+.btn-group .btn {
+  position: relative;
+  float: left;
+  margin-right: -1px;
+}
+.btn-group .btn:hover,
+.btn-group .btn:focus,
+.btn-group .btn:active,
+.btn-group .btn.active {
+  z-index: 2;
+}
+.btn-group:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
+}
+.btn-groups {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  font-size: 0;
+  white-space: nowrap;
+}
+.btn-groups .btn-group {
+  margin-right: 8px;
+}
+.btn-group > .btn:last-child {
+  margin-right: 0px;
+}
+.btn-groups > .btn-group:last-child {
+  margin-right: 0px;
 }
