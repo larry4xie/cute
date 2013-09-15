@@ -1795,3 +1795,30 @@ ul.breadcrumb .crumb-active,
 ol.breadcrumb .crumb-active {
   color: #666666;
 }
+/**
+ * gap 缝隙
+ */
+.gap-small {
+  display: block;
+  padding: 4px;
+}
+.gap {
+  display: block;
+  padding: 8px;
+}
+.gap-large {
+  display: block;
+  padding: 16px;
+}
+.gap-notop {
+  padding-top: 0px;
+}
+.gap-nobottom {
+  padding-bottom: 0px;
+}
+.gap-noleft {
+  padding-left: 0px;
+}
+.gap-noright {
+  padding-right: 0px;
+}

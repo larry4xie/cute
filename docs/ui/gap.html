@@ -1,0 +1,69 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        <title>gap</title>
+        <link type="text/css" rel="stylesheet" href="../../dist/cute.css"/>
+        <style type="text/css">
+            .m8 {
+                margin: 8px;
+            }
+            .row {
+                margin-bottom: 10px;
+            }
+            .gap, .gap-large, .gap-small {
+                border: 1px solid #ddd;
+            }
+            .content {
+                height: 100px;
+                text-align: center;
+                line-height: 100px;
+                background-color: #eee;
+            }
+        </style>
+    </head>
+    <body class="m8">
+    <div class="container">
+        <div class="row">
+            <div class="span4">
+                <div class="gap-small">
+                    <div class="content">gap-small</div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="gap">
+                    <div class="content">gap</div>
+                </div>
+            </div>
+            <div class="span4">
+                <div class="gap-large">
+                    <div class="content">gap-large</div>
+                </div>
+            </div>
+        </div>
+        <div class="row">
+            <div class="span3">
+                <div class="gap gap-notop">
+                    <div class="content">gap-notop</div>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="gap gap-noright">
+                    <div class="content">gap-noright</div>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="gap gap-nobottom">
+                    <div class="content">gap-nobottom</div>
+                </div>
+            </div>
+            <div class="span3">
+                <div class="gap gap-noleft">
+                    <div class="content">gap-noleft</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </body>
+</html>
+
