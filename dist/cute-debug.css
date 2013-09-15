@@ -601,8 +601,12 @@ dd {
 .table-hover tbody tr.info:hover td {
   background-color: #c4e3f3;
 }
-/*
+/**
  * button style
+ * 1. 边距使用指定像素，因为可能需要和其他组件如input组合，以及一些bug
+ * 2. 在可以的情况下推荐使用a不要使用input和button，因为a的表现最一致；其次使用button，不要用input
+ * bug:
+ * > ie 6/7 获取焦点黑框bug使用去除border方式
  */
 .btn {
   display: inline-block;
@@ -646,13 +650,13 @@ dd {
 .btn.btn-disabled:active {
   background-color: #ededed;
 }
-.btn-noborder {
-  *border: 0;
-  *padding: 5px 1.2em;
-}
 input.btn,
 button.btn {
-  *line-height: 1.1em;
+  *border: none !important;
+  *padding: 3px 1.2em 3px;
+}
+input.btn {
+  _padding: 4px 1.2em 2px;
 }
 a.btn {
   margin: 0px;
@@ -661,27 +665,20 @@ a.btn {
 a.btn:hover {
   text-decoration: none;
 }
-.btn-larger {
-  font-size: 22px;
-  padding: 10px 1.2em;
-}
 .btn-large {
-  font-size: 17px;
+  font-size: 20px;
   padding: 6px 1.2em;
 }
 .btn-small {
   font-size: 10px;
-  padding: 2px 1em;
-}
-.btn-smaller {
-  font-size: 9px;
-  padding: 0 .5em;
+  padding: 2px 0.8em;
 }
 .btn-block {
   display: block;
   width: 100%;
   padding-left: 0;
   padding-right: 0;
+  *border: none !important;
 }
 .btn-primary {
   color: #ffffff;
@@ -848,8 +845,9 @@ a.btn:hover {
 .btn-error-selected:hover {
   _background-color: #953b39;
 }
-/*
+/**
  *  form style
+ *  prepended and appended input 不要换行，设置font-size;0 ie低版本会有其他bug
  */
 .form fieldset {
   border: 0;
@@ -879,6 +877,7 @@ a.btn:hover {
   cursor: pointer;
   overflow: hidden;
   vertical-align: middle;
+  _padding-bottom: 1px;
 }
 .input-file-container .input-file {
   position: absolute;
@@ -892,7 +891,6 @@ a.btn:hover {
   /* overwrite */
 
   height: 100%;
-  letter-spacing: 2em;
   _height: auto;
   opacity: 0;
   filter: alpha(opacity=0);
@@ -936,6 +934,9 @@ a.btn:hover {
 .select:focus,
 .textarea:focus {
   outline: 0;
+}
+.input {
+  height: 1.5em;
 }
 .input:focus,
 .textarea:focus {
@@ -1037,29 +1038,34 @@ a.btn:hover {
   width: 150px;
   text-align: right;
 }
-.input-append,
-.input-prepend {
-  font-size: 0;
+.input-add-on {
   white-space: nowrap;
-  vertical-align: middle;
 }
-.input-append .add-on,
-.input-prepend .add-on {
+.input-add-on .add-on {
   display: inline-block;
   *display: inline;
   zoom: 1;
+  vertical-align: middle;
   font-size: 12px;
   line-height: 1.5em;
   padding: 4px 5px;
   background-color: #eeeeee;
   border: 1px solid #cccccc;
+  position: relative;
+  z-index: 2;
 }
-.input-prepend .add-on,
-.input-prepend .btn {
+.input-add-on .input:focus {
+  position: relative;
+  z-index: 3;
+}
+.input-add-on .btn {
+  position: relative;
+  z-index: 2;
+}
+.input-add-on .add-on-p {
   margin-right: -1px;
 }
-.input-append .add-on,
-.input-append .btn {
+.input-add-on .add-on-a {
   margin-left: -1px;
 }
 /**
