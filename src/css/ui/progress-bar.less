@@ -1,0 +1,35 @@
+/**
+ * progress-bar
+ */
+.progress {
+  overflow: hidden;
+  height: @baseLineHeight;
+  background-color: @progress-bg;
+}
+.progress .bar {
+  display: block;
+  float: left;
+  width: 0%;
+  height: 100%;
+  color: @progress-bar-color;
+  font-size: 12px; // TODO
+  text-align: center;
+  background-color: @progress-bar-bg;
+}
+
+// success
+.progress .bar-success, .progress-success .bar {
+  background-color: @progress-bar-success-bg;
+}
+// info
+.progress .bar-info, .progress-info .bar {
+  background-color: @progress-bar-info-bg;
+}
+// warn
+.progress .bar-warn, .progress-warn .bar {
+  background-color: @progress-bar-warn-bg;
+}
+// error
+.progress .bar-error, .progress-error .bar {
+  background-color: @progress-bar-error-bg;
+}

@@ -1,10 +1,7 @@
 ## Components
-* ui/breadcrumb
 * ui/callout
 * ui/notify
-* ui/progress-bar
 * ui/panel
-* ui/gap
 
 
 ## JavaScript
