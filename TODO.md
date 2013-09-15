@@ -1,12 +1,18 @@
 ## Components
-icon font
-callout
-btn icon
+* ui/breadcrumb
+* ui/callout
+* ui/notify
+* ui/button-groups
+* ui/progress-bar
+* ui/panel
+* ui/gap
+
 
 ## JavaScript
-Sticky
-button
-keymaster
+* Sticky
+* button
+* keymaster
 
 ## sys
-js version
+* 优化文档
+* js version
