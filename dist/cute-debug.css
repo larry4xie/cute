@@ -1772,3 +1772,26 @@ a.badge:hover {
 .btn-groups > .btn-group:last-child {
   margin-right: 0px;
 }
+/*
+ * breadcrumb
+ * 使用：ul,ol
+ */
+ul.breadcrumb,
+ol.breadcrumb {
+  list-style: none;
+  font-size: 12px;
+}
+ul.breadcrumb li,
+ol.breadcrumb li {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+}
+ul.breadcrumb .crumb-separator,
+ol.breadcrumb .crumb-separator {
+  padding: 0 4px;
+}
+ul.breadcrumb .crumb-active,
+ol.breadcrumb .crumb-active {
+  color: #666666;
+}

@@ -1,0 +1,18 @@
+/*
+ * breadcrumb
+ * 使用：ul,ol
+ */
+ul.breadcrumb, ol.breadcrumb {
+  list-style: none;
+  font-size: @breadcrumbFontSize;
+
+  li {
+    .inline-block();
+  }
+  .crumb-separator{
+    padding: 0 4px;
+  }
+  .crumb-active{
+    color: @breadcrumbColor;
+  }
+}
