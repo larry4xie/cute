@@ -1,19 +1,23 @@
 /**
  * icon font
+ * font name "li" "丽"
+ * 由于ie 6/7 不支持content，所以不能通过css实现icon的选择
  */
 @font-face {
-  font-family: "rei";
-  src: url("https://i.alipayobjects.com/common/fonts/rei.eot"); /* IE9*/
-  src: url("https://i.alipayobjects.com/common/fonts/rei.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-  url("https://i.alipayobjects.com/common/fonts/rei.woff") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
-  url("https://i.alipayobjects.com/common/fonts/rei.ttf")  format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-  url("https://i.alipayobjects.com/common/fonts/rei.svg#rei") format("svg"); /*  iOS 4.1- */
+  font-family: "li";
+  src: url('@{icon-font-path}@{icon-font-name}.eot'); /* IE9*/
+  src: url('@{icon-font-path}@{icon-font-name}.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+  url('@{icon-font-path}@{icon-font-name}.woff') format('woff'), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
+  url('@{icon-font-path}@{icon-font-name}.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+  url('@{icon-font-path}@{icon-font-name}.svg#@{icon-font-name}') format('svg'); /*  iOS 4.1- */
   font-weight: normal;
   font-style: normal;
 }
 .iconfont {
-  font-family: "rei";
+  font-family: "li";
+  .inline-block();
   font-style: normal;
   cursor: default;
   -webkit-font-smoothing: antialiased;
+  line-height: 1;
 }

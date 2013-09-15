@@ -1070,23 +1070,29 @@ a.btn:hover {
 }
 /**
  * icon font
+ * font name "li" "丽"
+ * 由于ie 6/7 不支持content，所以不能通过css实现icon的选择
  */
 @font-face {
-  font-family: "rei";
-  src: url("https://i.alipayobjects.com/common/fonts/rei.eot");
-  src: url("https://i.alipayobjects.com/common/fonts/rei.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
-   url("https://i.alipayobjects.com/common/fonts/rei.woff") format("woff"), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
-   url("https://i.alipayobjects.com/common/fonts/rei.ttf") format("truetype"), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
-   url("https://i.alipayobjects.com/common/fonts/rei.svg#rei") format("svg");
+  font-family: "li";
+  src: url('../fonts/li.eot');
+  src: url('../fonts/li.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+   url('../fonts/li.woff') format('woff'), /* chrome 6+、firefox 3.6+、Safari5.1+、Opera 11+ */
+   url('../fonts/li.ttf') format('truetype'), /* chrome、firefox、opera、Safari, Android, iOS 4.2+*/
+   url('../fonts/li.svg#li') format('svg');
   font-weight: normal;
   font-style: normal;/* IE9*/
   /*  iOS 4.1- */
 }
 .iconfont {
-  font-family: "rei";
+  font-family: "li";
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
   font-style: normal;
   cursor: default;
   -webkit-font-smoothing: antialiased;
+  line-height: 1;
 }
 .span12 {
   _display: inline;
