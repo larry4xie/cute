@@ -1,7 +1,9 @@
 ## Components
-* ui/callout
+* ui/listview
 * ui/panel
-
+* ui/Pagination
+* ui/Dropdown [Button dropdows]
+* ui/Nav [Navbar]
 
 ## JavaScript
 * Sticky

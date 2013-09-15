@@ -1,0 +1,56 @@
+/**
+ * listview
+ */
+.listview {
+  .active {
+
+  }
+}
+
+.listview-hover {
+  .listview-item {
+    &:hover {
+      background-color: @tableBackgroundHover;
+    }
+  }
+}
+
+.listview-striped {
+  .odd {
+    background-color: @tableBackgroundStriped;
+  }
+}
+
+.listview-item {
+  position: relative;
+  display: block;
+  padding: @listviewPadding;
+
+  margin-bottom: -1px;
+  background-color: @bgColor;
+  border: 1px solid @borderColor;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .badge {
+    float: right;
+    margin-left: @componentPadding;
+  }
+}
+
+.listview-item-title {
+  margin-bottom: .5em;
+  font-weight: 600;
+  font-size: @listviewTitleSize;
+
+  .aside {
+    float: right;
+    font-weight:500;
+    font-size: @baseFontSize * .9;
+  }
+}
+.listview-item-text {
+  line-height: 1.3;
+}
