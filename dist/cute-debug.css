@@ -1873,6 +1873,35 @@ ol.breadcrumb .crumb-active {
   background-color: #b94a48;
 }
 /**
+ * Callout
+ */
+.callout {
+  padding: 15px 20px 15px 15px;
+  border-left: 5px solid #b3dbef;
+  background-color: #f2f9fc;
+}
+.callout .callout-title {
+  margin-bottom: .5em;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+.callout-success {
+  border-color: #c4e3b7;
+  background-color: #f1f9ee;
+}
+.callout-info {
+  border-color: #b3dbef;
+  background-color: #f2f9fc;
+}
+.callout-warn {
+  border-color: #f6eaac;
+  background-color: #fdfbf1;
+}
+.callout-error {
+  border-color: #e6c1c1;
+  background-color: #fcf8f8;
+}
+/**
  * notify
  */
 .notify {

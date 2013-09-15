@@ -1,3 +1,31 @@
 /**
  * Callout
  */
+.callout {
+  padding: @calloutPadding;
+  border-left: 5px solid darken(@calloutBg, 15%);
+  background-color: @calloutBg;
+
+  .callout-title {
+    margin-bottom: .5em;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+}
+
+.callout-success {
+  border-color: darken(@calloutSucessBg, 15%);
+  background-color: @calloutSucessBg;
+}
+.callout-info {
+  border-color: darken(@calloutInfoBg, 15%);
+  background-color: @calloutInfoBg;
+}
+.callout-warn {
+  border-color: darken(@calloutWarnBg, 15%);
+  background-color: @calloutWarnBg;
+}
+.callout-error {
+  border-color: darken(@calloutErrorBg, 15%);
+  background-color: @calloutErrorBg;
+}
