@@ -293,6 +293,22 @@ blockquote:after {
   line-height: 0;
   width: 10px;
 }
+.close {
+  position: absolute;
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  cursor: pointer;
+  font-size: 18px;
+  line-height: 1;
+  color: #888;
+  font-weight: 500;
+  font-style: normal;
+}
+.close:hover {
+  text-decoration: none;
+  color: #333;
+}
 .fixed {
   position: fixed;
 }
@@ -1836,7 +1852,7 @@ ol.breadcrumb .crumb-active {
   width: 0%;
   height: 100%;
   color: #ffffff;
-  font-size: 12px;
+  font-size: .9em;
   text-align: center;
   background-color: #006dbc;
 }
@@ -1855,4 +1871,61 @@ ol.breadcrumb .crumb-active {
 .progress .bar-error,
 .progress-error .bar {
   background-color: #b94a48;
+}
+/**
+ * notify
+ */
+.notify {
+  position: relative;
+  padding: 8px;
+  *zoom: 1;
+  border: 1px solid #DFD245;
+  background-color: #fcf8e3;
+  border-color: #f7ecb5;
+  color: #c09853;
+}
+.notify a {
+  color: #a47e3c;
+}
+.notify a {
+  font-weight: 600;
+}
+.notify .notify-title {
+  margin-bottom: .5em;
+  font-weight: 600;
+  font-size: 1.1em;
+}
+.notify-close {
+  padding-right: 8px;
+}
+.notify-close .close {
+  right: 8px;
+  top: 8px;
+}
+.notify-noborder {
+  border: none;
+}
+.notify-success {
+  background-color: #dff0d8;
+  border-color: #c1e2b3;
+  color: #468847;
+}
+.notify-success a {
+  color: #356635;
+}
+.notify-info {
+  background-color: #d9edf7;
+  border-color: #afd9ee;
+  color: #3a87ad;
+}
+.notify-info a {
+  color: #2d6987;
+}
+.notify-error {
+  background-color: #f2dede;
+  border-color: #e4b9b9;
+  color: #b94a48;
+}
+.notify-error a {
+  color: #953b39;
 }

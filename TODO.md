@@ -1,12 +1,12 @@
 ## Components
 * ui/callout
-* ui/notify
 * ui/panel
 
 
 ## JavaScript
 * Sticky
 * button
+* notify
 * keymaster
 
 ## sys

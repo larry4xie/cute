@@ -1,0 +1,55 @@
+/**
+ * notify
+ */
+.notify {
+  // default warn
+  position: relative;
+  padding: @notifyPadding;
+  *zoom: 1; // ie hack
+  border: 1px solid #DFD245;
+  .notify(@notifyWarnBg, @notifyWarnText);
+
+  a {
+    font-weight: 600;
+  }
+
+  .notify-title {
+    margin-bottom: .5em;
+    font-weight: 600;
+    font-size: 1.1em;
+  }
+}
+.notify-close {
+  padding-right: @notifyPadding;
+  .close {
+    right: @notifyPadding; top: @notifyPadding;
+  }
+}
+// no border
+.notify-noborder {
+  border: none;
+}
+
+// style
+.notify-success {
+  .notify(@notifySuccessBg, @notifySuccessText);
+}
+.notify-info {
+  .notify(@notifyInfoBg, @notifyInfoText);
+}
+.notify-warn {
+  // default
+}
+.notify-error {
+  .notify(@notifyErrorBg, @notifyErrorText);
+}
+
+// mixin
+.notify(@bgColor, @color) {
+  background-color: @bgColor;
+  border-color: darken(@bgColor, 10%);
+  color: @color;
+  a {
+    color: darken(@color, 10%);
+  }
+}
