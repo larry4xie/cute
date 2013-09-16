@@ -1,0 +1,122 @@
+/**
+ * listview
+ */
+.list {
+  .active,
+  .active:hover,
+  .active:focus {
+    z-index: 2;
+    color: #fff;
+    background-color: @listActiveBg !important;
+    border-color: @listActiveBg;
+  }
+  .active-success,
+  .active-success:hover,
+  .active-success:focus{
+    background-color: @listActiveSuccessBg !important;
+    border-color: @listActiveSuccessBg;
+  }
+  .active-info,
+  .active-info:hover,
+  .active-info:focus{
+    background-color: @listActiveInfoBg !important;
+    border-color: @listActiveInfoBg;
+  }
+  .active-warn,
+  .active-warn:hover,
+  .active-warn:focus{
+    background-color: @listActiveWarnBg !important;
+    border-color: @listActiveWarnBg;
+  }
+  .active-error,
+  .active-error:hover,
+  .active-error:focus{
+    background-color: @listActiveErrorBg !important;
+    border-color: @listActiveErrorBg;
+  }
+}
+
+.list-item {
+  .clearfix();
+  position: relative;
+  display: block;
+  padding: @listPadding;
+
+  margin-bottom: -1px;
+  background-color: @bgColor;
+  border: 1px solid @borderColor;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+
+  .aside {
+    float: right;
+  }
+
+  // Linked list items
+  a& {
+    color: @bodyTextColor;
+
+    // Hover state
+    &:hover {
+      text-decoration: none;
+      background-color: @tableBackgroundHover;
+    }
+
+    &:active,
+    &:focus {
+      outline: 0;
+      background-color: darken(@tableBackgroundHover, 5%);
+    }
+  }
+}
+
+.list-item-title {
+  margin-bottom: .5em;
+  font-weight: 600;
+  font-size: @listTitleSize;
+
+  .aside {
+    font-weight:500;
+    font-size: @baseFontSize * .9;
+  }
+}
+.list-item-text {
+  line-height: 1.3;
+}
+.list-item-cap {
+  overflow: hidden;
+  display: block;
+  margin-right: @componentPadding * 3;
+  float: left;
+  background: #f8f8f8;
+  border: 1px solid @borderInverseColor;
+}
+
+.list-striped {
+  .odd {
+    background-color: @tableBackgroundStriped;
+  }
+}
+.list-noborder .list-item, .list-divide .list-item {
+  margin-bottom: 0;
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.list-noborder {
+  padding: 0;
+  .list-item {
+    border: none;
+  }
+}
+
+.list-divide {
+  .list-item {
+    border-width: 0 0 1px 0;
+  }
+  .last {
+    border: none;
+  }
+}
