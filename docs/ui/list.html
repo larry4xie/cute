@@ -2,86 +2,92 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-    <title>listview</title>
+    <title>list</title>
     <link type="text/css" rel="stylesheet" href="../../dist/cute.css"/>
     <style type="text/css">
         .m8 {
             margin: 18px 188px;
         }
+        .list-item-cap {
+            width: 100px;
+            height: 100px;
+        }
     </style>
 </head>
 <body>
 <div class="m8">
-    <ul class="listview listview-striped">
-        <li class="listview-item active">Cras justo odio</li>
-        <li class="listview-item odd">Dapibus ac facilisis in</li>
-        <li class="listview-item">Morbi leo risus</li>
-        <li class="listview-item odd">Porta ac consectetur ac</li>
-        <li class="listview-item">Vestibulum at eros</li>
+    <ul class="list list-striped">
+        <li class="list-item active">Cras justo odio</li>
+        <li class="list-item odd">Dapibus ac facilisis in</li>
+        <li class="list-item">Morbi leo risus</li>
+        <li class="list-item odd">Porta ac consectetur ac</li>
+        <li class="list-item">Vestibulum at eros</li>
     </ul>
 </div>
 
 <div class="m8">
-    <div class="listview listview-striped">
-        <a href="#" class="listview-item odd active">
+    <div class="list list-striped">
+        <a href="#" class="list-item odd active">
             Cras justo odio
         </a>
-        <a href="#" class="listview-item">Dapibus ac facilisis in</a>
-        <a href="#" class="listview-item odd">Morbi leo risus</a>
-        <a href="#" class="listview-item">Porta ac consectetur ac</a>
-        <a href="#" class="listview-item odd">Vestibulum at eros</a>
+        <a href="#" class="list-item">Dapibus ac facilisis in</a>
+        <a href="#" class="list-item odd">Morbi leo risus</a>
+        <a href="#" class="list-item">Porta ac consectetur ac</a>
+        <a href="#" class="list-item odd">Vestibulum at eros</a>
     </div>
 </div>
 
 <div class="m8">
-    <ul class="listview">
-        <li class="listview-item">
-            <span class="badge">1</span>
-            Cras justo odio
+    <ul class="list">
+        <li class="list-item">
+            <span class="aside badge">1</span>
+            <i class="icon icon-apple"></i>&nbsp;Cras justo odio
         </li>
-        <li class="listview-item">
-            <span class="badge badge-success">2</span>
-            Dapibus ac facilisis in
+        <li class="list-item">
+            <span class="aside badge badge-success">2</span>
+            <i class="icon icon-android"></i>&nbsp;Dapibus ac facilisis in
         </li>
-        <li class="listview-item">
-            <span class="badge badge-info">3</span>
-            <span class="badge badge-info">4</span>
-            Morbi leo risus
+        <li class="list-item">
+            <div class="aside">
+                <span class="badge badge-info">3</span>
+                <span class="badge badge-info">4</span>
+            </div>
+            <i class="icon icon-phone"></i>&nbsp;Morbi leo risus
         </li>
-        <li class="listview-item">
-            <span class="badge badge-warn">5</span>
-            Porta ac consectetur ac
+        <li class="list-item">
+            <span class="aside badge badge-warn">5</span>
+            <i class="icon icon-search"></i>&nbsp;Porta ac consectetur ac
         </li>
-        <li class="listview-item">
-            <span class="badge badge-error">6</span>
-            Vestibulum at eros
+        <li class="list-item">
+            <span class="aside badge badge-error">6</span>
+            <i class="icon icon-users"></i>&nbsp;Vestibulum at eros
         </li>
     </ul>
 </div>
 
 <div class="m8">
-    <div class="listview">
-        <div class="listview-item active">
-            <div class="listview-item-title">
+    <div class="list list-noborder">
+        <div class="list-item">
+            <div class="list-item-title">
                 <span class="aside">10:25AM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">List group item heading</div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        <div class="list-item">
+            <div class="list-item-title">List group item heading</div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">
+        <div class="list-item">
+            <div class="list-item-title">
                 <span class="aside">4:45PM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
@@ -89,28 +95,110 @@
 </div>
 
 <div class="m8">
-    <div class="listview">
-        <a href="#" class="listview-item active">
-            <div class="listview-item-title">
+    <div class="list list-divide">
+        <div class="list-item">
+            <div class="list-item-cap"></div>
+            <div class="list-item-title">
                 <span class="aside">10:25AM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                risus varius blandit.
+            <div class="list-item-text">
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
             </div>
-        </a>
-        <a href="#" class="listview-item">
-            <div class="listview-item-title">List group item heading</div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
-                risus varius blandit.
+        </div>
+        <div class="list-item">
+            <div class="list-item-cap"></div>
+            <div class="list-item-title">
+                <span class="aside">11:30AM</span>
+                List group item heading
             </div>
-        </a>
-        <a href="#" class="listview-item">
-            <div class="listview-item-title">
+            <div class="list-item-text">
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </div>
+        </div>
+        <div class="list-item">
+            <div class="list-item-cap"></div>
+            <div class="list-item-title">
+                <span class="aside">2:25PM</span>
+                List group item heading
+            </div>
+            <div class="list-item-text">
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </div>
+        </div>
+        <div class="list-item last">
+            <div class="list-item-cap"></div>
+            <div class="list-item-title">
                 <span class="aside">4:45PM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+                <p>Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget risus varius blandit.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="m8">
+    <div class="list">
+        <div class="list-item active">
+            <div class="list-item-title">
+                <span class="aside">10:25AM</span>
+                List group item heading
+            </div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                risus varius blandit.
+            </div>
+        </div>
+        <div class="list-item">
+            <div class="list-item-title">List group item heading</div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                risus varius blandit.
+            </div>
+        </div>
+        <div class="list-item">
+            <div class="list-item-title">
+                <span class="aside">4:45PM</span>
+                List group item heading
+            </div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                risus varius blandit.
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="m8">
+    <div class="list">
+        <a href="#" class="list-item active">
+            <div class="list-item-title">
+                <span class="aside">10:25AM</span>
+                List group item heading
+            </div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                risus varius blandit.
+            </div>
+        </a>
+        <a href="#" class="list-item">
+            <div class="list-item-title">List group item heading</div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+                risus varius blandit.
+            </div>
+        </a>
+        <a href="#" class="list-item">
+            <div class="list-item-title">
+                <span class="aside">4:45PM</span>
+                List group item heading
+            </div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </a>
@@ -118,128 +206,128 @@
 </div>
 
 <div class="m8">
-    <div class="listview">
-        <div class="listview-item active">
-            <div class="listview-item-title">
+    <div class="list">
+        <div class="list-item active">
+            <div class="list-item-title">
                 <span class="aside">10:25AM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">List group item heading</div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        <div class="list-item">
+            <div class="list-item-title">List group item heading</div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">
+        <div class="list-item">
+            <div class="list-item-title">
                 <span class="aside">4:45PM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
 
-        <div class="listview-item active active-success">
-            <div class="listview-item-title">
+        <div class="list-item active active-success">
+            <div class="list-item-title">
                 <span class="aside">10:25AM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">List group item heading</div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        <div class="list-item">
+            <div class="list-item-title">List group item heading</div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">
+        <div class="list-item">
+            <div class="list-item-title">
                 <span class="aside">4:45PM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
 
-        <div class="listview-item active active-info">
-            <div class="listview-item-title">
+        <div class="list-item active active-info">
+            <div class="list-item-title">
                 <span class="aside">10:25AM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">List group item heading</div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        <div class="list-item">
+            <div class="list-item-title">List group item heading</div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">
+        <div class="list-item">
+            <div class="list-item-title">
                 <span class="aside">4:45PM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
 
-        <div class="listview-item active active-warn">
-            <div class="listview-item-title">
+        <div class="list-item active active-warn">
+            <div class="list-item-title">
                 <span class="aside">10:25AM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">List group item heading</div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        <div class="list-item">
+            <div class="list-item-title">List group item heading</div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">
+        <div class="list-item">
+            <div class="list-item-title">
                 <span class="aside">4:45PM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
 
-        <div class="listview-item active active-error">
-            <div class="listview-item-title">
+        <div class="list-item active active-error">
+            <div class="list-item-title">
                 <span class="aside">10:25AM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">List group item heading</div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+        <div class="list-item">
+            <div class="list-item-title">List group item heading</div>
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
-        <div class="listview-item">
-            <div class="listview-item-title">
+        <div class="list-item">
+            <div class="list-item-title">
                 <span class="aside">4:45PM</span>
                 List group item heading
             </div>
-            <div class="listview-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
+            <div class="list-item-text">Donec id elit non mi porta gravida at eget metus. Maecenas sed diam eget
                 risus varius blandit.
             </div>
         </div>
