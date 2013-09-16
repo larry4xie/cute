@@ -1886,20 +1886,20 @@ ol.breadcrumb .crumb-active {
   font-size: 1.1em;
 }
 .callout-success {
-  border-color: #c4e3b7;
-  background-color: #f1f9ee;
+  border-color: #c1e2b3;
+  background-color: #eef7ea;
 }
 .callout-info {
   border-color: #b3dbef;
   background-color: #f2f9fc;
 }
 .callout-warn {
-  border-color: #f6eaac;
-  background-color: #fdfbf1;
+  border-color: #f6e9a7;
+  background-color: #fdfaec;
 }
 .callout-error {
-  border-color: #e6c1c1;
-  background-color: #fcf8f8;
+  border-color: #e5bdbd;
+  background-color: #fbf4f4;
 }
 /**
  * notify
@@ -1957,4 +1957,83 @@ ol.breadcrumb .crumb-active {
 }
 .notify-error a {
   color: #953b39;
+}
+/**
+ * listview
+ */
+.listview .active,
+.listview .active:hover,
+.listview .active:focus {
+  z-index: 2;
+  color: #fff;
+  background-color: #007cd6 !important;
+  border-color: #007cd6;
+}
+.listview .active-success,
+.listview .active-success:hover,
+.listview .active-success:focus {
+  background-color: #58a959 !important;
+  border-color: #58a959;
+}
+.listview .active-info,
+.listview .active-info:hover,
+.listview .active-info:focus {
+  background-color: #54a0c6 !important;
+  border-color: #54a0c6;
+}
+.listview .active-warn,
+.listview .active-warn:hover,
+.listview .active-warn:focus {
+  background-color: #ceae78 !important;
+  border-color: #ceae78;
+}
+.listview .active-error,
+.listview .active-error:hover,
+.listview .active-error:focus {
+  background-color: #c76e6d !important;
+  border-color: #c76e6d;
+}
+.listview-item {
+  *zoom: 1;
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: -1px;
+  background-color: #ffffff;
+  border: 1px solid #dddddd;
+}
+.listview-item:last-child {
+  margin-bottom: 0;
+}
+a.listview-item {
+  color: #333333;
+}
+a.listview-item:hover {
+  text-decoration: none;
+  background-color: #f5f5f5;
+}
+a.listview-item:active,
+a.listview-item:focus {
+  outline: 0;
+  background-color: #e8e8e8;
+}
+.listview-item .badge {
+  float: right;
+  margin-left: 4px;
+}
+.listview-item-title {
+  margin-bottom: .5em;
+  font-weight: 600;
+  font-size: 1.3em;
+}
+.listview-item-title .aside {
+  float: right;
+  font-weight: 500;
+  font-size: 10.8px;
+}
+.listview-item-text {
+  line-height: 1.3;
+}
+.listview-striped .odd {
+  background-color: #f9f9f9;
 }
