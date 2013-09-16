@@ -8,6 +8,12 @@ module.exports = function(grunt) {
                     src: ['src/css/lib.less'],
                     dest: 'dist/lib.less'
                 }]
+            },
+            "cute-ie67":{
+                files: [{
+                    src: ['src/js/cute-ie67.js'],
+                    dest: 'dist/cute-ie67.js'
+                }]
             }
         },
 
@@ -26,13 +32,22 @@ module.exports = function(grunt) {
                     'dist/cute-debug.css' : 'src/css/cute.less'
                 }
             }
+        },
+
+        uglify: {
+            "cute-ie67": {
+                files: {
+                    'dist/cute-ie67.js': ['dist/cute-ie67.js']
+                }
+            }
         }
     });
 
     // load
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-contrib-less');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
 
     // task
-    grunt.registerTask('default', ['copy:lib', 'less:cute', 'less:cute-debug']); // default
+    grunt.registerTask('default', ['copy:lib', 'less:cute', 'less:cute-debug', 'copy:cute-ie67', 'uglify:cute-ie67']); // default
 };
