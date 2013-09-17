@@ -1,8 +1,7 @@
 ## Components
-* ui/listview
 * ui/panel
 * ui/Pagination
-* ui/Dropdown [Button dropdows]
+* ui/Dropdown [Button dropdown select]
 * ui/Nav [Navbar]
 
 ## JavaScript
@@ -14,3 +13,4 @@
 ## sys
 * 优化文档
 * js version
+* 体积优化
