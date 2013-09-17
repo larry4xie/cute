@@ -1,5 +1,7 @@
 /**
- * cute的反义词
+ * ugly
+ *
+ * 使用：<!--[if lt IE 8]><script src="../../dist/cute-ie67.js"></script><![endif]-->
  *
  * 为保证低版本浏览器(主要是ie6/7)的一些主要功能也能正常使用的js工具<br/>
  *
