@@ -2122,10 +2122,10 @@ ol.breadcrumb .crumb-active {
   border-color: #f7ecb5;
   color: #c09853;
 }
-.notify a {
+.notify .notify-link {
   color: #a47e3c;
 }
-.notify a {
+.notify .notify-link {
   font-weight: 600;
 }
 .notify .notify-title {
@@ -2148,7 +2148,7 @@ ol.breadcrumb .crumb-active {
   border-color: #c1e2b3;
   color: #468847;
 }
-.notify-success a {
+.notify-success .notify-link {
   color: #356635;
 }
 .notify-info {
@@ -2156,7 +2156,7 @@ ol.breadcrumb .crumb-active {
   border-color: #afd9ee;
   color: #3a87ad;
 }
-.notify-info a {
+.notify-info .notify-link {
   color: #2d6987;
 }
 .notify-error {
@@ -2164,7 +2164,7 @@ ol.breadcrumb .crumb-active {
   border-color: #e4b9b9;
   color: #b94a48;
 }
-.notify-error a {
+.notify-error .notify-link {
   color: #953b39;
 }
 /**
