@@ -97,26 +97,19 @@
 // GRID
 @gridColumns: 12;
 
-// Default 1020(1000) grid
-@gridColumnWidth: 65px;
+// 960(950) grid
+// @gridColumnWidth: 70px;
+// @gridGutterWidth: @smallGutterWidth;
+
+// 1200(1180) grid
+@gridColumnWidth: 80px;
 @gridGutterWidth: @gutterWidth;
 @gridRowWidth: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * (@gridColumns - 1));
 @gridRowFullWidth: (@gridColumns * @gridColumnWidth) + (@gridGutterWidth * @gridColumns);
 
-// 1200(1180) grid
-@gridColumnWidth1200: 80px;
-@gridGutterWidth1200: @gutterWidth;
-@gridRowWidth1200: (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * (@gridColumns - 1));
-@gridRowFullWidth1200: (@gridColumns * @gridColumnWidth1200) + (@gridGutterWidth1200 * @gridColumns);
-
 // Fluid grid
-@fluidGridGutterWidth:  2%;
-@fluidGridColumnWidth:  percentage(76/1200); // 1200 = 12 * 100
-//@fluidGridColumnWidthIE67:  percentage(75/1200);
-
-// has none gutter fluid grid
-@fluidGridGutterWidthStingy  :  0;
-@fluidGridColumnWidthStingy:  percentage(100/1200); // 1200 = 12 * 100
+@fluidGridColumns: @gridColumns;
+@fluidGridColumnWidth:  percentage(1/@fluidGridColumns);
 
 // UI
 // ---------------------------------------------------
@@ -144,16 +137,12 @@
 // Notify
 @notifyTitleSize: 1.2em;
 @notifyPadding: @componentPadding * 2;
-
 @notifySuccessBg:     @bgSuccessColor;
 @notifySuccessText:   @textSuccessColor;
-
 @notifyInfoBg:        @bgInfoColor;
 @notifyInfoText:      @textInfoColor;
-
 @notifyWarnBg:     @bgWarnColor;
 @notifyWarnText:   @textWarnColor;
-
 @notifyErrorBg:      @bgErrorColor;
 @notifyErrorText:    @textErrorColor;
 
