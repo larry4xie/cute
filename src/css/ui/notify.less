@@ -7,16 +7,19 @@
   padding: @notifyPadding;
   *zoom: 1; // ie hack
   border: 1px solid #DFD245;
-  .notify(@notifyWarnBg, @notifyWarnText);
+  background-color: @notifyWarnBg;
+  border-color: darken(@notifyWarnBg, 10%);
+  color: @notifyWarnText;
 
   .notify-link {
     font-weight: 600;
+    color: darken(@notifyWarnText, 10%);
   }
 
   .notify-title {
     margin-bottom: .5em;
     font-weight: 600;
-    font-size: @notifyTitleSize;
+    font-size: @uiTitleSize;
   }
 }
 .notify-close {

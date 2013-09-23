@@ -175,10 +175,12 @@ blockquote:after {
   height: 0;
 }
 .pull-left,
-.pull-right {
+.pull-right,
+.aside {
   display: inline;
 }
-.pull-right {
+.pull-right,
+.aside {
   float: right;
 }
 .pull-left {
@@ -581,8 +583,8 @@ dd {
 .table-bordered td {
   border-left: 1px solid #dddddd;
 }
-.table-noborder th,
-.table-noborder td {
+.table-nob th,
+.table-nob td {
   border: none;
 }
 .table tbody tr.success td {
@@ -1615,6 +1617,7 @@ a.badge:hover {
 /*
  * breadcrumb
  * 使用：ul,ol
+ * 其中a标签使用系统全局设置样式
  */
 ul.breadcrumb,
 ol.breadcrumb {
@@ -1707,7 +1710,7 @@ ol.breadcrumb .crumb-active {
 .callout .callout-title {
   margin-bottom: .5em;
   font-weight: 600;
-  font-size: 1.1em;
+  font-size: 1.2em;
 }
 .callout-success {
   border-color: #c1e2b3;
@@ -1738,10 +1741,8 @@ ol.breadcrumb .crumb-active {
   color: #c09853;
 }
 .notify .notify-link {
-  color: #a47e3c;
-}
-.notify .notify-link {
   font-weight: 600;
+  color: #a47e3c;
 }
 .notify .notify-title {
   margin-bottom: .5em;
@@ -1755,7 +1756,7 @@ ol.breadcrumb .crumb-active {
   right: 8px;
   top: 8px;
 }
-.notify-noborder {
+.notify-nob {
   border: none;
 }
 .notify-success {
@@ -1842,9 +1843,6 @@ a.list-item {
 .list-item:last-child {
   margin-bottom: 0;
 }
-.list-item .aside {
-  float: right;
-}
 a.list-item {
   color: #333333;
 }
@@ -1877,22 +1875,22 @@ a.list-item:focus {
   font-weight: 500;
   font-size: 10.8px;
 }
-.list-item-text {
+.list-item-content {
   line-height: 1.3;
 }
 .list-striped .odd {
   background-color: #f9f9f9;
 }
-.list-noborder .list-item,
+.list-nob .list-item,
 .list-divide .list-item {
   margin-bottom: 0;
   padding-left: 0;
   padding-right: 0;
 }
-.list-noborder {
+.list-nob {
   padding: 0;
 }
-.list-noborder .list-item {
+.list-nob .list-item {
   border: none;
 }
 .list-divide .list-item {
