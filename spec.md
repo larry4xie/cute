@@ -43,6 +43,7 @@ __这种方案虽然名称较长，但是要表达的信息最清晰，同时可
 	> title, content
 	> head, body, foot
 
+	> curr: current
 	> nob: noborder
 
 #### 参考资料:
