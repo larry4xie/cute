@@ -1707,7 +1707,7 @@ ol.breadcrumb .crumb-active {
   border-left: 5px solid #b3dbef;
   background-color: #f2f9fc;
 }
-.callout .callout-title {
+.callout-title {
   margin-bottom: .5em;
   font-weight: 600;
   font-size: 1.2em;
@@ -1740,11 +1740,14 @@ ol.breadcrumb .crumb-active {
   border-color: #f7ecb5;
   color: #c09853;
 }
-.notify .notify-link {
+.notify-condensed {
+  padding: 4px 8px;
+}
+.notify-link {
   font-weight: 600;
   color: #a47e3c;
 }
-.notify .notify-title {
+.notify-title {
   margin-bottom: .5em;
   font-weight: 600;
   font-size: 1.2em;
@@ -1898,4 +1901,60 @@ a.list-item:focus {
 }
 .list-divide .last {
   border: none;
+}
+/**
+ * panel
+ * 不指定theme 因为使用场景不好预计，需要时可以根据具体使用场景定制
+ */
+.panel {
+  border: 1px solid #dddddd;
+  overflow: hidden;
+}
+.panel-body {
+  padding: 12px;
+  overflow: auto;
+}
+.panel-head,
+.panel-foot {
+  border-style: solid;
+  border-color: #dddddd;
+  padding: 6px 12px;
+  background-color: #f3f3f3;
+}
+.panel-head {
+  border-width: 0 0 1px;
+}
+.panel-foot {
+  border-width: 1px 0 0;
+}
+.panel-title {
+  font-weight: 600;
+  font-size: 1.2em;
+}
+.panel-follow {
+  border-top: 0;
+}
+.panel-nob {
+  border: none;
+}
+.panel-relax {
+  border: none;
+}
+.panel-relax .panel-head,
+.panel-relax .panel-foot {
+  border-width: 1px;
+}
+.panel-table {
+  margin-bottom: 0;
+  border: none;
+  border-top: 1px solid #dddddd;
+  margin-top: -1px;
+  position: relative;
+  z-index: -1;
+}
+.panel-list .list-item {
+  border-width: 1px 0;
+}
+.panel-list .list-item:last-child {
+  margin-bottom: -1px;
 }

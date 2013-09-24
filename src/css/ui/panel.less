@@ -1,10 +1,67 @@
 /**
  * panel
- * panel-header
- * panel-footer
- * panel table
- * panel list-group
- * panel follow
+ * 不指定theme 因为使用场景不好预计，需要时可以根据具体使用场景定制
  */
+.panel {
+  border: 1px solid @panelBorderColor;
+  overflow:hidden;
+}
 
+.panel-body {
+  padding: @panelBodyPadding;
+  overflow: auto;
+}
 
+.panel-head, .panel-foot {
+  border-style: solid;
+  border-color: @panelBorderColor;
+  padding: @panelHeadPadding @panelBodyPadding;
+  background-color: @panelHeadBgColor;
+}
+.panel-head {
+  border-width: 0 0 1px;
+}
+.panel-foot {
+  border-width: 1px 0 0;
+}
+// title in head or foot
+.panel-title {
+  font-weight: 600;
+  font-size: @uiTitleSize;
+}
+
+.panel-follow {
+  border-top: 0;
+}
+
+// style
+.panel-nob {
+  border: none;
+}
+.panel-relax {
+  border: none;
+  .panel-head, .panel-foot {
+    border-width: 1px
+  }
+}
+
+// table
+.panel-table {
+  margin-bottom: 0;
+  border: none;
+  border-top: 1px solid @borderColor;
+
+  // 当table上面没有内容时合并head边框
+  margin-top: -1px;
+  position: relative;
+  z-index: -1;
+}
+
+// list
+.panel-list .list-item {
+  border-width: 1px 0;
+
+  &:last-child {
+    margin-bottom: -1px;
+  }
+}

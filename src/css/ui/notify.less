@@ -10,18 +10,23 @@
   background-color: @notifyWarnBg;
   border-color: darken(@notifyWarnBg, 10%);
   color: @notifyWarnText;
-
-  .notify-link {
-    font-weight: 600;
-    color: darken(@notifyWarnText, 10%);
-  }
-
-  .notify-title {
-    margin-bottom: .5em;
-    font-weight: 600;
-    font-size: @uiTitleSize;
-  }
 }
+
+.notify-condensed {
+  padding: @notifyPadding / 2 @notifyPadding;
+}
+
+.notify-link {
+  font-weight: 600;
+  color: darken(@notifyWarnText, 10%);
+}
+
+.notify-title {
+  margin-bottom: .5em;
+  font-weight: 600;
+  font-size: @uiTitleSize;
+}
+
 .notify-close {
   padding-right: @notifyPadding;
   .close {

@@ -1,5 +1,4 @@
 ## Components
-* ui/panel
 * ui/Pagination
 * ui/Dropdown [Button dropdown select]
 * ui/Nav [Navbar]

@@ -41,7 +41,7 @@ __这种方案虽然名称较长，但是要表达的信息最清晰，同时可
 #### 常见命名、命名缩写
 	> divider: 分割
 	> title, content
-	> header, body, footer
+	> head, body, foot
 
 	> nob: noborder
 
