@@ -17,3 +17,73 @@
  * paging-which: 选择那一页（select,input）
  * paging-sizelist: 页面大小列表（select,input）
  */
+// TODO 对齐
+.paging {
+  vertical-align: middle;
+
+  .paging-item, .paging-prev, .paging-next, .paging-first, .paging-last,
+  .paging-info, .paging-curr, .paging-go, .paging-refresh, .paging-which, .paging-sizelist {
+    .inline-block();
+    margin: 0 2px;
+  }
+}
+
+// 上一页 下一页 第一页 最后一页 和 item 采用相同风格
+.paging-item, .paging-prev, .paging-next, .paging-first, .paging-last{
+  line-height: 1.5em;
+  padding: @pagingPadding @pagingPadding + 0.5;
+  border: solid 1px @borderColor;
+
+  .icon {
+    .small();
+  }
+
+  a& {
+    color: @bodyTextColor;
+    text-decoration: none;
+
+    &:hover {
+      color: @pagingHoverColor;
+      border: 1px solid @pagingHoverColor;
+      text-decoration: none;
+    }
+  }
+
+  span& {
+    color: @pagingDisabledColor;
+  }
+}
+
+.paging-curr {
+  line-height: 1.5em;
+  padding: @pagingPadding @pagingPadding + 0.5;
+
+  color: @pagingHoverColor;
+  border: 1px solid @pagingHoverColor;
+  background-color: @pagingCurrBg;
+}
+
+.paging-info {
+  color: @pagingInfoColor;
+}
+
+.paging-which, .paging-sizelist {
+  input{
+    line-height: 1.5em;
+    padding: @pagingPadding @pagingPadding + 0.5;
+    border: solid 1px @borderColor;
+    width: 2em;
+
+    color: @pagingInfoColor;
+  }
+  select {
+    line-height: 1.5em;
+    padding: @pagingPadding @pagingPadding;
+    border: solid 1px @borderColor;
+  }
+}
+
+.paging-go, paging-refresh {
+  // nothing
+  // btn
+}

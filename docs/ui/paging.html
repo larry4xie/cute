@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
+    <title>paging</title>
+    <link type="text/css" rel="stylesheet" href="../../dist/cute.css"/>
+    <style type="text/css">
+        body {
+            margin: 8px 0;
+        }
+        .paging {
+            margin-bottom: 28px;
+        }
+    </style>
+    <script type="text/javascript" src="../jquery.js"></script>
+    <!--[if lt IE 8]><script src="../../dist/cute-ie67.js"></script><![endif]-->
+</head>
+<body>
+<div class="container">
+    <div class="paging">
+        <span class="paging-info">1/20页,196条记录</span>
+        <span class="paging-prev"><i class="icon icon-arrowl"></i>&nbsp;上一页</span>
+        <span class="paging-curr">1</span>
+        <a class="paging-item" href="#" title="第3页">3</a>
+        <a class="paging-item" href="#" title="第4页">4</a>
+        <a class="paging-item" href="#" title="第5页">5</a>
+        <a class="paging-item" href="#" title="第6页">6</a>
+        <a class="paging-item" href="#" title="第7页">7</a>
+        <a class="paging-item" href="#" title="第8页">8</a>
+        <a class="paging-item" href="#" title="第9页">9</a>
+        <a class="paging-last" href="#" title="尾页">... 20</a>
+        <a class="paging-next" href="#" title="下一页">下一页&nbsp;<i class="icon icon-arrowr"></i></a>
+        <span class="paging-which"><input value="6" type="text"></span>
+        <span class="paging-sizelist">
+            <select>
+                <option>10条</option>
+                <option>50条</option>
+                <option>100条</option>
+            </select>
+        </span>
+        <a href="#" class="btn">跳&nbsp;转</a>
+    </div>
+
+    <div class="paging">
+        <span class="paging-prev"><i class="icon icon-arrowl"></i>&nbsp;上一页</span>
+        <span class="paging-curr">1</span>
+        <a class="paging-item" href="#" title="第3页">3</a>
+        <a class="paging-item" href="#" title="第4页">4</a>
+        <a class="paging-item" href="#" title="第5页">5</a>
+        <a class="paging-item" href="#" title="第6页">6</a>
+        <a class="paging-item" href="#" title="第7页">7</a>
+        <a class="paging-item" href="#" title="第8页">8</a>
+        <a class="paging-item" href="#" title="第9页">9</a>
+        <a class="paging-last" href="#" title="尾页">... 20</a>
+        <a class="paging-next" href="#" title="下一页">下一页&nbsp;<i class="icon icon-arrowr"></i></a>
+        <span class="paging-info">共20页,196条记录</span>
+    </div>
+
+    <div class="paging">
+        <a class="paging-prev" href="#" title="上一页"><i class="icon icon-arrowl"></i>&nbsp;上一页</a>
+        <a class="paging-first" href="#" title="首页">1 ...</a>
+        <a class="paging-item" href="#" title="第3页">3</a>
+        <a class="paging-item" href="#" title="第4页">4</a>
+        <a class="paging-item" href="#" title="第5页">5</a>
+        <span class="paging-curr">6</span>
+        <a class="paging-item" href="#" title="第7页">7</a>
+        <a class="paging-item" href="#" title="第8页">8</a>
+        <a class="paging-item" href="#" title="第9页">9</a>
+        <a class="paging-last" href="#" title="尾页">... 20</a>
+        <a class="paging-next" href="#" title="下一页">下一页&nbsp;<i class="icon icon-arrowr"></i></a>
+        <span class="paging-info">共20页,196条记录</span>
+    </div>
+
+    <div class="paging">
+        <a class="paging-prev" href="#" title="上一页"><i class="icon icon-arrowl"></i>&nbsp;上一页</a>
+        <a class="paging-first" href="#" title="首页">1 ...</a>
+        <a class="paging-item" href="#" title="第3页">3</a>
+        <a class="paging-item" href="#" title="第4页">4</a>
+        <a class="paging-item" href="#" title="第5页">5</a>
+        <a class="paging-item" href="#" title="第6页">6</a>
+        <a class="paging-item" href="#" title="第7页">7</a>
+        <a class="paging-item" href="#" title="第8页">8</a>
+        <a class="paging-item" href="#" title="第9页">9</a>
+        <span class="paging-curr">20</span>
+        <span class="paging-next">下一页&nbsp;<i class="icon icon-arrowr"></i></span>
+        <span class="paging-info">共20页,196条记录</span>
+    </div>
+
+    <div class="paging">
+        <span class="paging-info">第&nbsp;1&nbsp;/&nbsp;7&nbsp;页</span>
+        <span class="paging-prev"><i class="icon icon-arrowl"></i>&nbsp;上一页</span>
+        <a class="paging-next" href="#" title="下一页">下一页&nbsp;<i class="icon icon-arrowr"></i></a>
+    </div>
+
+    <div class="paging">
+        <span class="paging-info">第&nbsp;3&nbsp;/&nbsp;7&nbsp;页</span>
+        <a class="paging-prev" href="#" title="上一页"><i class="icon icon-arrowl"></i>&nbsp;上一页</a>
+        <a class="paging-next" href="#" title="下一页">下一页&nbsp;<i class="icon icon-arrowr"></i></a>
+    </div>
+
+    <div class="paging">
+        <span class="paging-info">第&nbsp;7&nbsp;/&nbsp;7&nbsp;页</span>
+        <a class="paging-prev" href="#" title="上一页"><i class="icon icon-arrowl"></i>&nbsp;上一页</a>
+        <span class="paging-next">下一页&nbsp;<i class="icon icon-arrowr"></i></span>
+    </div>
+</div>
+</body>
+</html>

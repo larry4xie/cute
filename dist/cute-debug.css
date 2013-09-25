@@ -1240,16 +1240,16 @@ input.btn-block {
 .icon-question:before {
   content: "\e029";
 }
-.icon-arrowDown:before {
+.icon-arrowd:before {
   content: "\e02a";
 }
-.icon-arrowLeft:before {
+.icon-arrowl:before {
   content: "\e02b";
 }
-.icon-arrowRight:before {
+.icon-arrowr:before {
   content: "\e02c";
 }
-.icon-arrowTop:before {
+.icon-arrowt:before {
   content: "\e02d";
 }
 .icon-downTriangle:before {
@@ -1957,4 +1957,106 @@ a.list-item:focus {
 }
 .panel-list .list-item:last-child {
   margin-bottom: -1px;
+}
+/**
+ * paging
+ *
+ * 模型：（采用嵌套风格，因为不通style的分页theme复用性不高，但是模型可以复用）
+ * paging-info:;分页信息
+ * paging-item
+ * paging-curr: 当前页
+ *
+ * paging-prev: 上一页
+ * paging-next: 下一页
+ * paging-first: 第一页
+ * paging-last: 最后一页
+ *
+ * paging-go: 跳转
+ * paging-refresh: 刷新
+ *
+ * paging-which: 选择那一页（select,input）
+ * paging-sizelist: 页面大小列表（select,input）
+ */
+.paging {
+  vertical-align: middle;
+}
+.paging .paging-item,
+.paging .paging-prev,
+.paging .paging-next,
+.paging .paging-first,
+.paging .paging-last,
+.paging .paging-info,
+.paging .paging-curr,
+.paging .paging-go,
+.paging .paging-refresh,
+.paging .paging-which,
+.paging .paging-sizelist {
+  display: inline-block;
+  *display: inline;
+  zoom: 1;
+  margin: 0 2px;
+}
+.paging-item,
+.paging-prev,
+.paging-next,
+.paging-first,
+.paging-last {
+  line-height: 1.5em;
+  padding: 0.3em 0.8em;
+  border: solid 1px #dddddd;
+}
+.paging-item .icon,
+.paging-prev .icon,
+.paging-next .icon,
+.paging-first .icon,
+.paging-last .icon {
+  font-size: .85em;
+}
+a.paging-item,
+a.paging-prev,
+a.paging-next,
+a.paging-first,
+a.paging-last {
+  color: #333333;
+  text-decoration: none;
+}
+a.paging-item:hover,
+a.paging-prev:hover,
+a.paging-next:hover,
+a.paging-first:hover,
+a.paging-last:hover {
+  color: #ff7c0a;
+  border: 1px solid #ff7c0a;
+  text-decoration: none;
+}
+span.paging-item,
+span.paging-prev,
+span.paging-next,
+span.paging-first,
+span.paging-last {
+  color: #cccccc;
+}
+.paging-curr {
+  line-height: 1.5em;
+  padding: 0.3em 0.8em;
+  color: #ff7c0a;
+  border: 1px solid #ff7c0a;
+  background-color: #fff9f4;
+}
+.paging-info {
+  color: #666666;
+}
+.paging-which input,
+.paging-sizelist input {
+  line-height: 1.5em;
+  padding: 0.3em 0.8em;
+  border: solid 1px #dddddd;
+  width: 2em;
+  color: #666666;
+}
+.paging-which select,
+.paging-sizelist select {
+  line-height: 1.5em;
+  padding: 0.3em 0.3em;
+  border: solid 1px #dddddd;
 }
