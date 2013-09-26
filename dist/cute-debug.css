@@ -1115,6 +1115,7 @@ input.btn-block {
   font-weight: normal;
   line-height: 1;
   cursor: default;
+  _zoom: 0;
   -webkit-font-smoothing: antialiased;
 }
 .icon-pencil:before {
@@ -1977,9 +1978,6 @@ a.list-item:focus {
  * paging-which: 选择那一页（select,input）
  * paging-sizelist: 页面大小列表（select,input）
  */
-.paging {
-  vertical-align: middle;
-}
 .paging .paging-item,
 .paging .paging-prev,
 .paging .paging-next,
@@ -1990,11 +1988,17 @@ a.list-item:focus {
 .paging .paging-go,
 .paging .paging-refresh,
 .paging .paging-which,
-.paging .paging-sizelist {
+.paging .paging-sizelist,
+.paging .btn {
   display: inline-block;
   *display: inline;
   zoom: 1;
   margin: 0 2px;
+  *vertical-align: middle;
+}
+.paging .btn {
+  padding: 0.3em 0.8em;
+  vertical-align: top;
 }
 .paging-item,
 .paging-prev,
@@ -2046,17 +2050,21 @@ span.paging-last {
 .paging-info {
   color: #666666;
 }
-.paging-which input,
-.paging-sizelist input {
-  line-height: 1.5em;
-  padding: 0.3em 0.8em;
-  border: solid 1px #dddddd;
-  width: 2em;
-  color: #666666;
+.paging-which,
+.paging-sizelist {
+  vertical-align: top;
 }
+.paging-which input,
+.paging-sizelist input,
 .paging-which select,
 .paging-sizelist select {
   line-height: 1.5em;
-  padding: 0.3em 0.3em;
+  padding: 0.3em 0.8em;
   border: solid 1px #dddddd;
+}
+.paging-which input,
+.paging-sizelist input {
+  height: 1.5em;
+  width: 2em;
+  color: #666666;
 }
