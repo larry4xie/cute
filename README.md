@@ -8,4 +8,3 @@ JS基于[Seajs](http://seajs.org/)、[SpmJs](https://spmjs.org/)、[CMD](https:/
 
 ## JavaScript
 [JavaScript Lib Description](http://git.oschina.net/xang529/cute/blob/master/src/js/JavaScript%20Lib%20Description.md)
-
