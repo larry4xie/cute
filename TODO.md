@@ -6,6 +6,7 @@
 * Sticky
 * button
 * notify
+* select
 * keymaster
 
 ## sys

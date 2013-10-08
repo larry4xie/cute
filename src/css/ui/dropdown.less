@@ -1,0 +1,24 @@
+/**
+ * dropdown
+ * dropdown menu
+ * 宽松不限制的dropdown
+ */
+.dropdown {
+  position: relative;
+}
+
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: @zindex-dropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 2px 0 0; // override default ul
+  list-style: none;
+  font-size: @baseFontSize;
+  background-color: @dropdownBg;
+  border: 1px solid @dropdownBorder;
+}
