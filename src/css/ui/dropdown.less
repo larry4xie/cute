@@ -9,16 +9,48 @@
 
 .dropdown-menu {
   position: absolute;
-  top: 100%;
-  left: 0;
-  z-index: @zindex-dropdown;
-  display: none; // none by default, but block on "open" of the menu
+  z-index: @zindexDropdown;
+  // TODO display: none; // none by default, but block on "open" of the menu
   float: left;
-  min-width: 160px;
+  min-width: @dropdownMinWidth;
   padding: 5px 0;
-  margin: 2px 0 0; // override default ul
+  margin: 0; // override default ul
   list-style: none;
   font-size: @baseFontSize;
   background-color: @dropdownBg;
   border: 1px solid @dropdownBorder;
+
+  li {
+    *display: inline; // hack ie67 block
+  }
+
+  .divider {
+    .nav-divider(@dropdownDividerBg);
+  }
+
+  li a {
+    display: block;
+    padding: 3px 20px;
+    clear: both;
+    font-weight: normal;
+    line-height: @baseLineHeight;
+    color: @dropdownItemColor;
+    white-space: nowrap; // prevent links from randomly breaking onto new lines
+
+    &:hover,
+    &:focus {
+      text-decoration: none;
+      color: @dropdownItemHoverColor;
+      background-color: @dropdownItemHoverBg;
+    }
+  }
+}
+.dropdown-menu-inverse {
+  li a {
+    &:hover,
+    &:focus {
+      color: @dropdownItemColor;
+      background-color: @dropdownItemInverseHoverBg;
+    }
+  }
 }

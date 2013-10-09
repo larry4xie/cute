@@ -2068,3 +2068,51 @@ span.paging-last {
   width: 2em;
   color: #666666;
 }
+/**
+ * dropdown
+ * dropdown menu
+ * 宽松不限制的dropdown
+ */
+.dropdown {
+  position: relative;
+}
+.dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  z-index: 1000;
+  float: left;
+  min-width: 160px;
+  padding: 5px 0;
+  margin: 0;
+  list-style: none;
+  font-size: 12px;
+  background-color: #ffffff;
+  border: 1px solid #cccccc;
+}
+.dropdown-menu li a {
+  display: block;
+  padding: 3px 20px;
+  clear: both;
+  font-weight: normal;
+  line-height: 1.5em;
+  color: #333333;
+  white-space: nowrap;
+}
+.dropdown-menu li a:hover,
+.dropdown-menu li a:focus {
+  text-decoration: none;
+  color: #ffffff;
+  background-color: #428bca;
+}
+.dropdown-menu .divider {
+  height: 1px;
+  margin: 6px 0;
+  overflow: hidden;
+  background-color: #e5e5e5;
+}
+.dropdown-menu-inverse li a:hover,
+.dropdown-menu-inverse li a:focus {
+  color: #333333;
+  background-color: #eeeeee;
+}
