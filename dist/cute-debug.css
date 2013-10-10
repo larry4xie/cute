@@ -244,6 +244,12 @@ blockquote:after {
 .smaller {
   font-size: .7em;
 }
+.halfmr {
+  margin-right: .5em;
+}
+.halfml {
+  margin-left: .5em;
+}
 .gutter {
   clear: both;
   display: block;
@@ -1631,8 +1637,8 @@ ol.breadcrumb li {
   *display: inline;
   zoom: 1;
 }
-ul.breadcrumb .crumb-separator,
-ol.breadcrumb .crumb-separator {
+ul.breadcrumb .crumb-divider,
+ol.breadcrumb .crumb-divider {
   padding: 0 4px;
 }
 ul.breadcrumb .crumb-active,
@@ -2075,27 +2081,38 @@ span.paging-last {
  */
 .dropdown {
   position: relative;
+  *zoom: 1;
 }
-.dropdown-menu {
+.dropdown-open .dropdown-menu,
+.dropdown-open .dropdown-panel {
+  display: block;
+}
+.dropdown-menu,
+.dropdown-panel {
   position: absolute;
   top: 100%;
-  left: 0;
   z-index: 1000;
+  display: none;
   float: left;
+  border: 1px solid #cccccc;
   min-width: 160px;
+}
+.dropdown-menu {
   padding: 5px 0;
   margin: 0;
   list-style: none;
   font-size: 12px;
+  line-height: 1.5em;
   background-color: #ffffff;
-  border: 1px solid #cccccc;
+}
+.dropdown-menu li {
+  *display: inline;
 }
 .dropdown-menu li a {
   display: block;
   padding: 3px 20px;
   clear: both;
   font-weight: normal;
-  line-height: 1.5em;
   color: #333333;
   white-space: nowrap;
 }
@@ -2105,14 +2122,34 @@ span.paging-last {
   color: #ffffff;
   background-color: #428bca;
 }
-.dropdown-menu .divider {
-  height: 1px;
-  margin: 6px 0;
-  overflow: hidden;
-  background-color: #e5e5e5;
-}
 .dropdown-menu-inverse li a:hover,
 .dropdown-menu-inverse li a:focus {
   color: #333333;
   background-color: #eeeeee;
+}
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+.dropdown-menu-divider i {
+  display: block;
+  line-height: 1px;
+  margin: 6px 0;
+  padding: 0;
+  background-color: #e5e5e5;
+}
+.dropdown-menu-header {
+  display: block;
+  padding: 3px 20px;
+  font-weight: 600;
+  color: #4d4d4d;
+}
+.dropdown-menu-disabled a {
+  cursor: default;
+  color: #999999 !important;
+}
+.dropdown-menu-disabled a:hover,
+.dropdown-menu-disabled a:focus {
+  color: #999999 !important;
+  background-color: transparent !important;
 }

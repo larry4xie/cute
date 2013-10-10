@@ -77,7 +77,8 @@
         $('.icon').each(function(i, el){
             var c = el.className.match(/icon-[^\s'"]+/);
             if (c && icons[c[0]]) {
-                el.innerHTML = icons[c[0]];
+                $(el).html(icons[c[0]]);
+                // el.innerHTML = icons[c[0]];
             }
         });
     });

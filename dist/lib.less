@@ -193,8 +193,9 @@
 
 // Dividers (basically an hr) within dropdowns and nav lists
 .nav-divider(@color: #e5e5e5, @margin: @baseFontSize/2) {
-  height: 1px;
+  display: block;
+  line-height: 1px; // height 触发 ie 67 haslayout
   margin: @margin 0;
-  overflow: hidden;
+  padding: 0;
   background-color: @color;
 }

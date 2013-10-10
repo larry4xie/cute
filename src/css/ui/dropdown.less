@@ -5,27 +5,36 @@
  */
 .dropdown {
   position: relative;
+  *zoom: 1;
+}
+
+.dropdown-open {
+  .dropdown-menu, .dropdown-panel {
+    display: block;
+  }
+}
+
+.dropdown-menu, .dropdown-panel {
+  position: absolute;
+  top: 100%;
+  z-index: @zindexDropdown;
+  display: none; // none by default, but block on "open" of the menu
+  float: left;
+
+  border: 1px solid @dropdownBorder;
+  min-width: @dropdownMinWidth;
 }
 
 .dropdown-menu {
-  position: absolute;
-  z-index: @zindexDropdown;
-  // TODO display: none; // none by default, but block on "open" of the menu
-  float: left;
-  min-width: @dropdownMinWidth;
   padding: 5px 0;
   margin: 0; // override default ul
   list-style: none;
   font-size: @baseFontSize;
+  line-height: @baseLineHeight;
   background-color: @dropdownBg;
-  border: 1px solid @dropdownBorder;
 
   li {
     *display: inline; // hack ie67 block
-  }
-
-  .divider {
-    .nav-divider(@dropdownDividerBg);
   }
 
   li a {
@@ -33,7 +42,6 @@
     padding: 3px 20px;
     clear: both;
     font-weight: normal;
-    line-height: @baseLineHeight;
     color: @dropdownItemColor;
     white-space: nowrap; // prevent links from randomly breaking onto new lines
 
@@ -45,12 +53,52 @@
     }
   }
 }
+
+// 浅色theme
 .dropdown-menu-inverse {
   li a {
     &:hover,
     &:focus {
       color: @dropdownItemColor;
       background-color: @dropdownItemInverseHoverBg;
+    }
+  }
+}
+
+// Aligns the dropdown menu to right
+.dropdown-menu-right {
+  right: 0;
+  left: auto;
+}
+
+.dropdown-menu-divider i{
+  // `i` hack ie 67 display:inline and width:100%
+  .nav-divider(@dropdownDividerBg);
+}
+
+.dropdown-menu-header {
+  display: block;
+  padding: 3px 20px;
+  .strong();
+  color: lighten(@dropdownItemColor, 10%)
+}
+
+// has icon
+.dropdown-menu-icon {
+  li a, .dropdown-menu-header {
+    padding: 3px 10px;
+  }
+}
+
+.dropdown-menu-disabled {
+  a{
+    cursor: default;
+    color: @dropdownItemDisabledColor !important;
+
+    &:hover,
+    &:focus {
+      color: @dropdownItemDisabledColor !important;
+      background-color: transparent !important;
     }
   }
 }
