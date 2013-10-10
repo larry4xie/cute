@@ -1,7 +1,6 @@
 /**
  * dropdown
- * dropdown menu
- * 宽松不限制的dropdown
+ * dropdown menu icon 为了兼容ie6,不能通过css的方式（:before）指定，需要使用icon值得方式
  */
 .dropdown {
   position: relative;
@@ -54,6 +53,12 @@
   }
 }
 
+// Aligns the dropdown menu to right
+.dropdown-right {
+  right: 0;
+  left: auto;
+}
+
 // 浅色theme
 .dropdown-menu-inverse {
   li a {
@@ -63,12 +68,6 @@
       background-color: @dropdownItemInverseHoverBg;
     }
   }
-}
-
-// Aligns the dropdown menu to right
-.dropdown-menu-right {
-  right: 0;
-  left: auto;
 }
 
 .dropdown-menu-divider i{

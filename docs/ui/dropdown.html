@@ -3,8 +3,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
         <title>dropdown</title>
-        <script type="text/javascript" src="../jquery.js"></script>
-        <!--[if lt IE 8]><script src="../../dist/cute-ie67.js"></script><![endif]-->
         <link type="text/css" rel="stylesheet" href="../../dist/cute.css"/>
         <style type="text/css">
             .grid3, .grid9 {
@@ -43,7 +41,7 @@
                 <div class="dropdown dropdown-open">
                     <ul class="dropdown-menu">
                         <li><a href="#">Regular link</a></li>
-                        <li><a href="#">Disabled link</a></li>
+                        <li class="dropdown-menu-disabled"><a href="#">Disabled link</a></li>
                         <li><a href="#">Another link</a></li>
                     </ul>
                 </div>
@@ -51,7 +49,7 @@
 
             <div class="grid3">
                 <div class="dropdown dropdown-open">
-                    <ul class="dropdown-menu dropdown-menu-right">
+                    <ul class="dropdown-menu dropdown-right">
                         <li class="dropdown-menu-header">Dropdown header</li>
                         <li><a href="#">Action</a></li>
                         <li class="dropdown-menu-disabled"><a href="#">Another action</a></li>
@@ -70,19 +68,19 @@
             <div class="grid3">
                 <div class="dropdown dropdown-open">
                     <ul class="dropdown-menu dropdown-menu-icon">
-                        <li class="dropdown-menu-header"><i class="icon icon-mobile halfmr text-error"></i>Dropdown header</li>
-                        <li><a href="#"><i class="icon icon-android halfmr text-success"></i>Action</a></li>
-                        <li class="dropdown-menu-disabled"><a href="#"><i class="icon icon-clock halfmr"></i>Another action</a></li>
-                        <li><a href="#"><i class="icon icon-apple halfmr text-info"></i>Something else here</a></li>
+                        <li class="dropdown-menu-header"><i class="icon halfmr text-error">&#xe008;</i>Dropdown header</li>
+                        <li><a href="#"><i class="icon halfmr text-success">&#xe022;</i>Action</a></li>
+                        <li class="dropdown-menu-disabled"><a href="#"><i class="icon halfmr">&#xe006;</i>Another action</a></li>
+                        <li><a href="#"><i class="icon halfmr text-info">&#xe021;</i>Something else here</a></li>
                         <li class="dropdown-menu-divider"><i>&nbsp;</i></li>
-                        <li><a href="#"><i class="icon icon-camera halfmr text-error"></i>Separated link</a></li>
+                        <li><a href="#"><i class="icon halfmr text-error">&#xe002;</i>Separated link</a></li>
                     </ul>
                 </div>
             </div>
 
             <div class="grid9">
                 <div class="dropdown dropdown-open">
-                    <ul class="dropdown-panel">
+                    <ul class="dropdown-panel dropdown-right">
                         <div class="panel panel-nob" style="width: 800px;">
                             <div class="panel-head">
                                 <span class="panel-title">dropdown-panel</span>
