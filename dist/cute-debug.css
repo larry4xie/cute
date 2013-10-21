@@ -1421,6 +1421,17 @@ input.btn-block {
   width: 1180px;
   margin-right: auto;
   margin-left: auto;
+  zoom: 1;
+  /* for IE6 IE7 */
+
+}
+.container:after {
+  visibility: hidden;
+  display: block;
+  font-size: 0;
+  content: " ";
+  clear: both;
+  height: 0;
 }
 .row-fluid {
   zoom: 1;
@@ -2076,8 +2087,7 @@ span.paging-last {
 }
 /**
  * dropdown
- * dropdown menu
- * 宽松不限制的dropdown
+ * dropdown menu icon 为了兼容ie6,不能通过css的方式（:before）指定，需要使用icon值得方式
  */
 .dropdown {
   position: relative;
@@ -2122,14 +2132,14 @@ span.paging-last {
   color: #ffffff;
   background-color: #428bca;
 }
+.dropdown-right {
+  right: 0;
+  left: auto;
+}
 .dropdown-menu-inverse li a:hover,
 .dropdown-menu-inverse li a:focus {
   color: #333333;
   background-color: #eeeeee;
-}
-.dropdown-menu-right {
-  right: 0;
-  left: auto;
 }
 .dropdown-menu-divider i {
   display: block;
@@ -2143,6 +2153,10 @@ span.paging-last {
   padding: 3px 20px;
   font-weight: 600;
   color: #4d4d4d;
+}
+.dropdown-menu-icon li a,
+.dropdown-menu-icon .dropdown-menu-header {
+  padding: 3px 10px;
 }
 .dropdown-menu-disabled a {
   cursor: default;
