@@ -225,7 +225,7 @@ blockquote:after {
   font-weight: 600;
 }
 .normal {
-  font-size: 12px;
+  font-size: 13px;
   font-style: normal;
   font-weight: 500;
 }
@@ -373,7 +373,7 @@ button,
 input,
 select,
 textarea {
-  font: 12px "\5FAE\8F6F\96C5\9ED1", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53";
+  font: 13px "\5FAE\8F6F\96C5\9ED1", tahoma, arial, "Hiragino Sans GB", "\5b8b\4f53";
   line-height: 1.5em;
   *line-height: 1.5em;
 }
@@ -382,7 +382,7 @@ p {
 }
 .lead {
   margin-bottom: 1.5em;
-  font-size: 18px;
+  font-size: 19.5px;
   font-weight: 500;
   line-height: 2.25em;
 }
@@ -641,7 +641,7 @@ dd {
   cursor: pointer;
   text-align: center;
   vertical-align: middle;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5em;
   *line-height: 1.5em;
   padding: 4px 1.2em;
@@ -690,11 +690,11 @@ a.btn:hover {
   text-decoration: none;
 }
 .btn-large {
-  font-size: 20px;
+  font-size: 21px;
   padding: 6px 1.2em;
 }
 .btn-small {
-  font-size: 10px;
+  font-size: 11px;
   padding: 2px 0.8em;
 }
 .btn-block {
@@ -1008,7 +1008,7 @@ input.btn-block {
   color: #f00;
   font-family: SimSun;
   font-size: 14px;
-  line-height: 18px;
+  line-height: 19.5px;
 }
 .form-item {
   margin-bottom: 1.2em;
@@ -1073,7 +1073,7 @@ input.btn-block {
   *display: inline;
   zoom: 1;
   vertical-align: middle;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5em;
   padding: 4px 5px;
   background-color: #eeeeee;
@@ -1540,7 +1540,7 @@ input.btn-block {
   display: inline-block;
   *display: inline;
   zoom: 1;
-  font-size: 10.8px;
+  font-size: 11.700000000000001px;
   color: #ffffff;
   vertical-align: baseline;
   white-space: nowrap;
@@ -1640,7 +1640,7 @@ a.badge:hover {
 ul.breadcrumb,
 ol.breadcrumb {
   list-style: none;
-  font-size: 12px;
+  font-size: 13px;
 }
 ul.breadcrumb li,
 ol.breadcrumb li {
@@ -1894,7 +1894,7 @@ a.list-item:focus {
 }
 .list-item-title .aside {
   font-weight: 500;
-  font-size: 10.8px;
+  font-size: 11.700000000000001px;
 }
 .list-item-content {
   line-height: 1.3;
@@ -2111,7 +2111,7 @@ span.paging-last {
   padding: 5px 0;
   margin: 0;
   list-style: none;
-  font-size: 12px;
+  font-size: 13px;
   line-height: 1.5em;
   background-color: #ffffff;
 }
@@ -2144,7 +2144,7 @@ span.paging-last {
 .dropdown-menu-divider i {
   display: block;
   line-height: 1px;
-  margin: 6px 0;
+  margin: 6.5px 0;
   padding: 0;
   background-color: #e5e5e5;
 }
