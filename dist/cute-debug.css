@@ -1327,7 +1327,7 @@ input.btn-block {
   zoom: 1;
   /* for IE6 IE7 */
 
-  margin-right: -10px;
+  margin-right: -20px;
 }
 .row:after {
   visibility: hidden;
@@ -1349,80 +1349,80 @@ input.btn-block {
 .row .grid10,
 .row .grid11,
 .row .grid12 {
-  margin-right: 10px;
-  margin-bottom: 10px;
+  margin-right: 20px;
+  margin-bottom: 20px;
 }
 .row .grid12 {
-  width: 950px;
+  width: 1180px;
 }
 .row .grid11 {
-  width: 870px;
+  width: 1080px;
 }
 .row .grid10 {
-  width: 790px;
+  width: 980px;
 }
 .row .grid9 {
-  width: 710px;
+  width: 880px;
 }
 .row .grid8 {
-  width: 630px;
+  width: 780px;
 }
 .row .grid7 {
-  width: 550px;
+  width: 680px;
 }
 .row .grid6 {
-  width: 470px;
+  width: 580px;
 }
 .row .grid5 {
-  width: 390px;
+  width: 480px;
 }
 .row .grid4 {
-  width: 310px;
+  width: 380px;
 }
 .row .grid3 {
-  width: 230px;
+  width: 280px;
 }
 .row .grid2 {
-  width: 150px;
+  width: 180px;
 }
 .row .grid1 {
-  width: 70px;
+  width: 80px;
 }
 .row .offset11 {
-  margin-left: 880px;
+  margin-left: 1100px;
 }
 .row .offset10 {
-  margin-left: 800px;
+  margin-left: 1000px;
 }
 .row .offset9 {
-  margin-left: 720px;
+  margin-left: 900px;
 }
 .row .offset8 {
-  margin-left: 640px;
+  margin-left: 800px;
 }
 .row .offset7 {
-  margin-left: 560px;
+  margin-left: 700px;
 }
 .row .offset6 {
-  margin-left: 480px;
+  margin-left: 600px;
 }
 .row .offset5 {
-  margin-left: 400px;
+  margin-left: 500px;
 }
 .row .offset4 {
-  margin-left: 320px;
+  margin-left: 400px;
 }
 .row .offset3 {
-  margin-left: 240px;
+  margin-left: 300px;
 }
 .row .offset2 {
-  margin-left: 160px;
+  margin-left: 200px;
 }
 .row .offset1 {
-  margin-left: 80px;
+  margin-left: 100px;
 }
 .container {
-  width: 950px;
+  width: 1180px;
   margin-right: auto;
   margin-left: auto;
   zoom: 1;
