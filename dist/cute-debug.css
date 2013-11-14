@@ -1074,6 +1074,7 @@ input.btn-block {
   zoom: 1;
   vertical-align: middle;
   font-size: 13px;
+  height: 1.5em;
   line-height: 1.5em;
   padding: 4px 5px;
   background-color: #eeeeee;
@@ -1086,6 +1087,8 @@ input.btn-block {
   z-index: 3;
 }
 .input-add-on .btn {
+  height: 1.5em;
+  line-height: 1.5em;
   position: relative;
   z-index: 2;
 }
@@ -1347,6 +1350,7 @@ input.btn-block {
 .row .grid11,
 .row .grid12 {
   margin-right: 20px;
+  margin-bottom: 20px;
 }
 .row .grid12 {
   width: 1180px;
